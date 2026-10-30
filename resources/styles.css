@@ -1,0 +1,77 @@
+:root {
+    --azul-fondo: #1C2F50;
+    --azul-oscuro: #142340; /* Color para el navbar y el footer */
+    --blanco-texto: white;
+    --amarillo-detalle: #F47B20; /* Color de subrayado navbar y boton login */
+}
+
+* {
+    /*Esto es para quitar margenes predeterminados a toda la pagian*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--azul-fondo);
+    color: var(--blanco-texto);
+    font-family: sans-serif;
+}
+
+header {
+    background-color: var(--azul-fondo);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    /*Logo a la izq, caja1 centro, caja2 der*/
+    align-items: center;
+    padding: 0 20px;
+    /*Padding izq y derecha en los elementos*/
+}
+
+#href_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /*Espacio para texto*/
+    text-decoration: none;
+    /*Esto quita el subrayado del link*/
+    color: var(--blanco-texto);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#logoAnvil {
+    height: 55px;
+}
+
+#caja1,
+#caja2 {
+    display: flex;
+    gap: 25px;
+    /*Espacio para texto*/
+}
+
+
+#caja1 a {
+    color: var(--blanco-texto);
+    text-decoration: none;
+    /*Esto quita el subrayado del link*/
+    border-bottom: 4px solid var(--amarillo-detalle);
+    /*Es el grosor del subrayado*/
+    padding-bottom: 5px;
+    /*Separacion del subrayado del texto*/
+    font-weight: bold;
+}
+
+#href_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--amarillo-detalle);
+    color: var(--azul-fondo);
+    padding: 8px 16px;
+    border-radius: 5px;
+}
