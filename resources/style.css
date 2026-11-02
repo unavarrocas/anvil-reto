@@ -1,0 +1,170 @@
+* {
+    /*Esto es para quitar margenes predeterminados a toda la pagian*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1C2F50;
+    color: white;
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #142340;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    /*Logo a la izq, caja1 centro, caja2 der*/
+    align-items: center;
+    padding: 0 20px;
+    /*Padding izq y derecha en los elementos*/
+}
+
+
+/*Por defecto estara oculto, hasta que no hagamos la pagina pequeña*/
+#btn_hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#btn_login_menu,
+#carrito_menu {
+    display: none;
+    /*Para la vista pc, no los necesitamos*/
+}
+
+#href_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /*Espacio para texto*/
+    text-decoration: none;
+    /*Esto quita el subrayado del link*/
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#logoAnvil {
+    height: 55px;
+}
+
+#iconoCarrito {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#caja1,
+#caja2 {
+    display: flex;
+    gap: 25px;
+    /*Espacio para texto*/
+}
+
+
+#caja1 a {
+    color: white;
+    text-decoration: none;
+    /*Esto quita el subrayado del link*/
+    font-weight: bold;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+/*Sobre saldran al pasar el raton*/
+#caja1 a:hover {
+    border-bottom-color: #F47B20;
+}
+
+/*Lo mismo para el menu hamburgesa*/
+#caja1 a.activo-menu {
+    border-bottom-color: #F47B20;
+}
+
+
+#href_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #F47B20;
+    color: #142340;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+
+/*Media queries: TABLET*/
+@media (max-width: 700px) {
+
+    header {
+        position: relative;
+        align-items: center;
+    }
+
+    #href_logo {
+        /*Para centrar el logo, al quitar la caja se iba a la derecha*/
+        margin: 0 auto;
+    }
+
+    /*Hacemos aparecer la hamburgesa de navegacion*/
+    #btn_hamburguesa {
+        display: block;
+    }
+
+    /*Ocultamos la navegacion normal*/
+    #caja1 {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        /*Lo mismo que 100%*/
+        background-color: #142340;
+        flex-direction: column;
+        padding: 20px;
+        align-items: flex-start;
+        z-index: 1000;
+        /*Para atraer alante del todo el panel.*/
+        gap: 20px;
+        /*Espacio entre las opciones*/
+    }
+
+    /*Cuando se haga click encima, abrira la hamburgesa o la ocultara*/
+    #caja1.activo {
+        display: flex;
+    }
+
+    #caja2 {
+        display: none;
+    }
+
+    #btn_login_menu,
+    #carrito_menu {
+        display: flex;
+        /*En vista movil, si que los mostramos*/
+    }
+
+    #btn_login_menu {
+        background-color: #F47B20;
+        color: white;
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+}
