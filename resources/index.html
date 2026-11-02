@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anvil · Tienda</title>
+  <title>Anvil.com</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,21 +13,29 @@
   <!--Navbar-->
   <header>
 
-    <a id="href_logo" href="">
+    <button id="btn_hamburguesa">☰</button>
+
+    <a id="href_logo" href="#">
       <img src="/Imagenes/logoAnvil.png" id="logoAnvil" alt="Anvil_Logo"><!--Logo-->
       <span>ANVIL</span>
     </a>
 
     <div id="caja1">
-      <a id="href_tienda" href="">Tienda</a> <!--Hrefs para navegar-->
-      <a id="href_biblioteca" href="">Biblioteca</a> <!--Hrefs para navegar-->
+
+      <a id="btn_login_menu" href="#">Iniciar sesion</a>
+      <a id="carrito_menu" class="enlace-menu" href="#">Carrito</a>
+
+      <a id="href_tienda" class="enlace-menu activo-menu" href="#">Tienda</a> <!--Hrefs para navegar-->
+      <a id="href_biblioteca" class="enlace-menu" href="#">Biblioteca</a> <!--Hrefs para navegar-->
     </div>
 
     <div id="caja2">
-      <a id="href_carrito" href="">
-        <img src="/Imagenes/carritoCompra.png" id="logoAnvil" alt="Anvil_Logo"><!--Carrito-->
+      
+      <a id="href_carrito" href="#">
+        <img src="/Imagenes/carritoCompra.png" id="iconoCarrito" alt="Carrito"><!--Carrito-->
       </a>
-      <a id="href_login" href="">Login</a> <!--Hrefs para iniciar sesion-->
+
+      <a id="href_login" href="#">Login</a> <!--Hrefs para iniciar sesion-->
     </div>
 
   </header>
@@ -46,6 +54,10 @@
 
   </div>
   <!--/Contenedor de cards-->
+
+
+  <!--Elace al script-->
+  <script src="script.js"></script>
 
 </body>
 
