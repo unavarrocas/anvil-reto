@@ -1,3 +1,12 @@
+:root {
+
+    --azul-fondo: #1C2F50;
+    --blanco-texto: white;
+    --azul-fondo-header-footer: #142340;
+    --amarillo-detalles: #F47B20;
+
+}
+
 * {
     /*Esto es para quitar margenes predeterminados a toda la pagian*/
     margin: 0;
@@ -6,13 +15,13 @@
 }
 
 body {
-    background-color: #1C2F50;
-    color: white;
+    background-color: var(--azul-fondo);
+    color: var(--blanco-texto);
     font-family: sans-serif;
 }
 
 header {
-    background-color: #142340;
+    background-color: var(--azul-fondo-header-footer);
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -28,7 +37,7 @@ header {
     display: none;
     background: none;
     border: none;
-    color: white;
+    color: var(--blanco-texto);
     font-size: 28px;
     cursor: pointer;
 }
@@ -46,7 +55,7 @@ header {
     /*Espacio para texto*/
     text-decoration: none;
     /*Esto quita el subrayado del link*/
-    color: white;
+    color: var(--blanco-texto);
     font-size: 20px;
     font-weight: bold;
 }
@@ -71,7 +80,7 @@ header {
 
 
 #caja1 a {
-    color: white;
+    color: var(--blanco-texto);
     text-decoration: none;
     /*Esto quita el subrayado del link*/
     font-weight: bold;
@@ -82,12 +91,12 @@ header {
 
 /*Sobre saldran al pasar el raton*/
 #caja1 a:hover {
-    border-bottom-color: #F47B20;
+    border-bottom-color: var(--amarillo-detalles);
 }
 
 /*Lo mismo para el menu hamburgesa*/
 #caja1 a.activo-menu {
-    border-bottom-color: #F47B20;
+    border-bottom-color: var(--amarillo-detalles);
 }
 
 
@@ -96,10 +105,29 @@ header {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: #F47B20;
-    color: #142340;
+    background-color: var(--amarillo-detalles);
+    color: var(--azul-fondo-header-footer);
     padding: 8px 16px;
     border-radius: 5px;
+}
+
+footer {
+
+    margin-top: 20px;
+    background-color: var(--azul-fondo-header-footer);
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-footer {
+
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+
 }
 
 
@@ -130,7 +158,7 @@ header {
         width: 260px;
         height: 100vh;
         /*Lo mismo que 100%*/
-        background-color: #142340;
+        background-color: var(--azul-fondo-header-footer);
         flex-direction: column;
         padding: 20px;
         align-items: flex-start;
@@ -156,8 +184,8 @@ header {
     }
 
     #btn_login_menu {
-        background-color: #F47B20;
-        color: white;
+        background-color: var(--amarillo-detalles);
+        color: var(--blanco-texto);
         width: 100%;
         justify-content: center;
         padding: 12px;
