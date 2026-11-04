@@ -1,11 +1,14 @@
-const btnHamburguesa = document.getElementById('btn_hamburguesa');
-const caja1 = document.getElementById('caja1');
+/* ===== VARIABLES ===== */
+/* Navbar */
+const btnHamburguesa = document.querySelector('header button');
+const caja1 = document.querySelector('header nav');
 
 
-/*En cuanto se haga click:*/
+/* ===== HAMBURGUESA DESPLEGABLE ===== */
 btnHamburguesa.addEventListener('click', () => {
-  
-  /*Toggle es un interruptor, aplica o quita el estado de activo.*/
+
+  /*Toggle es un interruptor, aplica o quita el estado de activo.
+  Para que se muestre o deje de mostrar el menú desplegable izquierdo*/
   caja1.classList.toggle('activo');
 
 });
