@@ -12,7 +12,7 @@ class CJuego
     function index()
     {
         $data = $this->model->index();
-        require __DIR__ . "/../view/VJuegoIndex.php";
+        require __DIR__ . "/../view/VTienda.php";
     }
 
     function show($id)
