@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenido a ANVIL</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../resources/style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <button id="btn_hamburguesa">☰</button>
 
     <a id="href_logo" href="#">
-      <img src="Imagenes/logoAnvil.png" id="logoAnvil" alt="Anvil_Logo"><!--Logo-->
+      <img src="../resources/Imagenes/logoAnvil.png" id="logoAnvil" alt="Anvil_Logo"><!--Logo-->
       <span>ANVIL</span>
     </a>
 
@@ -32,7 +32,7 @@
     <div id="caja2">
 
       <a id="href_carrito" href="#">
-        <img src="Imagenes/carritoCompra.png" id="iconoCarrito" alt="Carrito"><!--Carrito-->
+        <img src="../resources/Imagenes/carritoCompra.png" id="iconoCarrito" alt="Carrito"><!--Carrito-->
       </a>
 
       <a id="href_login" href="login.html">Login</a> <!--Hrefs para iniciar sesion-->
@@ -55,7 +55,7 @@
     <section>
 
       <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 1">
+        <img src="../resources/Imagenes/portadaPruebas.jpg" alt="Jueguito 1">
         <div>
           <h3>Juego 1</h3>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
@@ -66,7 +66,7 @@
       </article>
 
       <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 2">
+        <img src="../resources/Imagenes/portadaPruebas.jpg" alt="Jueguito 2">
         <div>
           <h3>Juego 2</h3>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
@@ -77,7 +77,7 @@
       </article>
 
       <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 3">
+        <img src="../resources/Imagenes/portadaPruebas.jpg" alt="Jueguito 3">
         <div>
           <h3>Juego 3</h3>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
@@ -88,7 +88,7 @@
       </article>
 
       <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 4">
+        <img src="../resources/Imagenes/portadaPruebas.jpg" alt="Jueguito 4">
         <div>
           <h3>Juego 4</h3>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
@@ -99,7 +99,7 @@
       </article>
 
       <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 5">
+        <img src="../resources/Imagenes/portadaPruebas.jpg" alt="Jueguito 5">
         <div>
           <h3>Juego 5</h3>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
@@ -116,7 +116,7 @@
 
   <footer>
 
-    <img src="Imagenes/logoAnvil.png" class="logo-footer"/>
+    <img src="../resources/Imagenes/logoAnvil.png" class="logo-footer"/>
     <p>© 2026 Anvil. Todos los derechos reservados.</p>
 
   </footer>
