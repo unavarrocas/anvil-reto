@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANVIL - Login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleIker.css">
-    <link rel="stylesheet" href="loginIker.css">
+    <link rel="stylesheet" href="../../resources/style.css">
+    <link rel="stylesheet" href="../../resources/styleIker.css">
+    <link rel="stylesheet" href="../../resources/loginIker.css">
 </head>
 
 <body>
 
     <!-- Formulario -->
     <main>
-        <form>
-            <img src="Imagenes/logoAnvil.png" alt="Logo de Anvil">
+        <form method="post" action="?entity=login&action=login">
+            <img src="../../resources/Imagenes/logoAnvil.png" alt="Logo de Anvil">
             <h1>Inicia sesión</h1>
 
             <label for="usuario">Nombre de la cuenta</label>

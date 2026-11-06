@@ -31,6 +31,15 @@ form img {
     margin-bottom: 16px;
 }
 
+form span {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: var(--amarillo-detalles);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* "Inicia sesion" */
 h1 {
     font-size: 24px;
@@ -66,7 +75,7 @@ button {
 }
 
 /* Primero */
-button:nth-child(7) {
+button:nth-child(8) {
     background-color: var(--amarillo-detalles);
     color: var(--azul-fondo-header-footer);
     font-size: 16px;
@@ -74,14 +83,14 @@ button:nth-child(7) {
 }
 
 /* Segundo */
-button:nth-child(8) {
+button:nth-child(9) {
     background-color: transparent;
     color: var(--gris-texto-secundario);
     font-size: 14px;
     font-weight: normal;
 }
 
-button:nth-child(8):hover {
+button:nth-child(9):hover {
     color: var(--amarillo-detalles);
 }
 
@@ -89,7 +98,7 @@ button:nth-child(8):hover {
 /* Imágen */
 aside {
     width: 50%;
-    background-image: url(Imagenes/fondoLogin.jpg);
+    background-image: url(../resources/fondoLogin.jpg);
     /* Ajustar y centrar */
     background-size: cover;
     background-position: center;
