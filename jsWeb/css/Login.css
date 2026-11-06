@@ -1,0 +1,131 @@
+/* ===== CUERPO ===== */
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* ===== IZQUIERDA ===== */
+main {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: var(--fuente);
+}
+
+/* ===== FORMULARIO ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    padding: 32px;
+    background-color: var(--azul-fondo-card);
+    border-radius: 10px;
+}
+
+/* Logo */
+form img {
+    width: 100px;
+    align-self: center;
+    margin-bottom: 16px;
+}
+
+form span {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: var(--amarillo-detalles);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* "Inicia sesion" */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Label */
+label {
+    color: var(--gris-texto-secundario);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Input */
+input {
+    background-color: var(--azul-fondo-header-footer);
+    color: var(--blanco-texto);
+    font-size: 16px;
+    padding: 12px;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+/* Texto errores */
+#mensajeError {
+    color: #ff6b6b;
+    font-size: 14px;
+    min-height: 1.2em;
+}
+
+/* Botones */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* Primero */
+button:nth-child(9) {
+    background-color: var(--amarillo-detalles);
+    color: var(--azul-fondo-header-footer);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Segundo */
+button:nth-child(10) {
+    background-color: transparent;
+    color: var(--gris-texto-secundario);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+button:nth-child(10):hover {
+    color: var(--amarillo-detalles);
+}
+
+/* ===== DERECHA ===== */
+/* Imágen */
+aside {
+    width: 50%;
+    background-image: url(../resources/fondoLogin.jpg);
+    /* Ajustar y centrar */
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 700px) {
+
+    /* ===== IZQUIERDA ===== */
+    main {
+        width: 100%;
+    }
+
+    /* ===== FORMULARIO ===== */
+    form {
+        width: 100%;
+    }
+
+    /* ===== DERECHA ===== */
+    aside {
+        display: none;
+    }
+
+}

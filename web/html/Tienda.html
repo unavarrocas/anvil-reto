@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenido a ANVIL</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="styleIker.css">
+  <title>Tienda</title>
+  <link rel="stylesheet" href="../css/Style.css">
+  <link rel="stylesheet" href="../css/Tienda.css">
+  <link rel="icon" type="image/png" href="../resources/logoAnvil.png">
 </head>
 
 <body>
@@ -17,19 +18,19 @@
     <button>☰</button>
 
     <aside>
-      <img src="Imagenes/logoAnvil.png" alt="Logo de Anvil">
+      <img src="../resources/logoAnvil.png" alt="Logo de Anvil">
       <span>ANVIL</span>
     </aside>
 
     <nav>
-      <a href="#" class="actual">Tienda</a>
-      <a href="#">Biblioteca</a>
-      <a href="#">Carrito</a>
+      <a href="Tienda.html" class="actual">Tienda</a>
+      <a href="Biblioteca.html">Biblioteca</a>
+      <a href="Carrito.html">Carrito</a>
     </nav>
 
     <aside>
       <!-- Carrito -->
-      <a href="#" title="Carrito"></a>
+      <a href="Carrito.html" title="Carrito"></a>
       <!-- Perfil personalizado -->
       <article id="perfil">
         <p>Nickname</p>
@@ -41,69 +42,78 @@
 
 
   <!--Contenedor de cards-->
-  <div>
+  <main id="cards">
 
     <section>
 
-      <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 1">
-        <div>
-          <h3>Juego 1</h3>
+      <article>
+        <img src="../resources/portadaPruebas.jpg">
+        <aside>
+          <div>
+            <h3>Juego 1</h3>
+            <span>PEGI 7</span>
+            <span>20,00 €</span>
+          </div>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
-          <p>Precio: 20€</p>
-          <p>PEGI: 7</p>
-          <button class="boton-añadir">Añadir al carrito</button>
-        </div>
+          <button>Añadir al carrito</button>
+        </aside>
       </article>
 
-      <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 2">
-        <div>
-          <h3>Juego 2</h3>
+      <article>
+        <img src="../resources/portadaPruebas.jpg">
+        <aside>
+          <div>
+            <h3>Juego 1</h3>
+            <span>PEGI 7</span>
+            <span>20,00 €</span>
+          </div>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
-          <p>Precio: 20€</p>
-          <p>PEGI: 7</p>
-          <button class="boton-añadir">Añadir al carrito</button>
-        </div>
+          <button>Añadir al carrito</button>
+        </aside>
       </article>
 
-      <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 3">
-        <div>
-          <h3>Juego 3</h3>
+      <article>
+        <img src="../resources/portadaPruebas.jpg">
+        <aside>
+          <div>
+            <h3>Juego 1</h3>
+            <span>PEGI 7</span>
+            <span>20,00 €</span>
+          </div>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
-          <p>Precio: 20€</p>
-          <p>PEGI: 7</p>
-          <button class="boton-añadir">Añadir al carrito</button>
-        </div>
+          <button>Añadir al carrito</button>
+        </aside>
       </article>
 
-      <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 4">
-        <div>
-          <h3>Juego 4</h3>
+      <article>
+        <img src="../resources/portadaPruebas.jpg">
+        <aside>
+          <div>
+            <h3>Juego 1</h3>
+            <span>PEGI 7</span>
+            <span>20,00 €</span>
+          </div>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
-          <p>Precio: 20€</p>
-          <p>PEGI: 7</p>
-          <button class="boton-añadir">Añadir al carrito</button>
-        </div>
+          <button>Añadir al carrito</button>
+        </aside>
       </article>
 
-      <article class="card-juego">
-        <img src="Imagenes/portadaPruebas.jpg" alt="Jueguito 5">
-        <div>
-          <h3>Juego 5</h3>
+      <article>
+        <img src="../resources/portadaPruebas.jpg">
+        <aside>
+          <div>
+            <h3>Juego 1</h3>
+            <span>PEGI 7</span>
+            <span>20,00 €</span>
+          </div>
           <p>Descripcion de relleno para poder empezar a crear cards sin pensar mucho</p>
-          <p>Precio: 20€</p>
-          <p>PEGI: 7</p>
-          <button class="boton-añadir">Añadir al carrito</button>
-        </div>
+          <button>Añadir al carrito</button>
+        </aside>
       </article>
 
     </section>
 
-  </div>
-  <!--/Contenedor de cards-->
+  </main>
 
   <!-- Trailer juego -->
   <section class="trailer">
@@ -128,20 +138,18 @@
         controls: muestra los controles del video para que el usuario pueda activar
         el sonido. -->
     <video autoplay muted loop playsinline controls>
-      <source src="Imagenes/Trailer.mp4" type="video/mp4">
+      <source src="../resources/Trailer.mp4" type="video/mp4">
     </video>
   </section>
 
+  <!-- Footer -->
   <footer>
-
-    <img src="Imagenes/logoAnvil.png" class="logo-footer" />
+    <img src="../resources/logoAnvil.png" class="logo-footer" />
     <p>© 2026 Anvil. Todos los derechos reservados.</p>
-
   </footer>
 
-
   <!--Elace al script-->
-  <script src="script.js"></script>
+  <script src="../js/Script.js"></script>
 
 </body>
 
