@@ -1,0 +1,225 @@
+/* ===== Videojuegos ===== */
+/* Cada seccion, separada por pegi */
+#cards section {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Cada card */
+#cards section article {
+    background-color: var(--azul-fondo-card);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--blanco-transparente);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+/* Desplazamientos vertical/horizontal, difuminado del borde, color */
+#cards section article:hover {
+    box-shadow: 0 0 15px var(--sombra-blanca);
+}
+
+/* Imagen */
+#cards img {
+    width: 100%;
+    height: 170px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+/* Resto del card */
+#cards aside {
+    /* Que coja todo el espacio que pueda */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+}
+
+/* Titulo, PEGI y precio */
+#cards aside div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Titulo */
+#cards h3 {
+    flex-grow: 1;
+    font-size: 17px;
+}
+
+/* PEGI */
+#cards span:first-of-type {
+    border: 1px solid var(--gris-texto-secundario);
+    color: var(--gris-texto-secundario);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+/* Precio */
+#cards span:last-of-type {
+    background-color: var(--azul-fondo-header-footer);
+    color: var(--blanco-texto);
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Descripcion */
+#cards p {
+    color: var(--gris-texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 63px;
+}
+
+/* Boton: margin-top auto lo empuja abajo del todo */
+#cards button {
+    background: var(--amarillo-detalles);
+    color: var(--azul-fondo-header-footer);
+    margin-top: auto;
+    border: none;
+    font-family: inherit;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* ===== SECCION TRAILER ===== */
+/* Contenedor general */
+.trailer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 95%;
+    margin: 48px auto;
+    padding: 32px;
+    background-color: var(--azul-fondo-card);
+    border-radius: 1px;
+}
+
+/* Articulo izquierdo */
+.trailer article {
+    width: 35%;
+}
+
+/* Titulo articulo */
+.trailer h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+/* Texto "TRAILER OFICIAL" */
+/* ::before lo que hace es crear un elemento html dentro de
+    .trailer h2 */
+.trailer h2::before {
+    content: "TRÁILER OFICIAL";
+    /* Para que se ponga encima del texto, por defecto se pone
+    al lado (inline-block) */
+    display: block;
+    color: var(--amarillo-detalles);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* Parrafo frase gancho */
+.trailer p {
+    color: var(--gris-texto-secundario);
+    /* Altura de cada linea, para dejar espacio entre texto */
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+/* Botones descriptivos */
+.trailer ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.trailer li {
+    background-color: var(--blanco-transparente);
+    color: var(--gris-texto-secundario);
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.trailer li:hover {
+    background-color: var(--amarillo-detalles);
+    color: var(--azul-fondo-header-footer);
+}
+
+.trailer video {
+    width: 65%;
+    border-radius: 12px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Query para ajustar los videojuegos de 3 en 3 */
+@media (max-width: 1290px) {
+
+    #cards section {
+        grid-template-columns: 300px 300px 300px;
+    }
+}
+
+/* Query para ajustar los videojuegos de 2 en 2 */
+@media (max-width: 960px) {
+
+    #cards section {
+        grid-template-columns: 300px 300px;
+    }
+}
+
+/* TABLET */
+@media (max-width: 700px) {
+
+    /* ===== SECCION TRAILER ===== */
+    /* Contenedor general */
+    .trailer {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 20px;
+        margin: 32px auto;
+    }
+
+    /* El articulo y el video ocupan el 100% de ancho
+    y se ponen uno encima del otro */
+    .trailer article,
+    .trailer video {
+        width: 100%;
+    }
+
+    /* Titulo articulo */
+    .trailer h2 {
+        font-size: 24px;
+    }
+
+    /* Botones descriptivos */
+    .trailer ul {
+        justify-content: center;
+    }
+}
+
+/* Query para ajustar los videojuegos de 1 en 1 */
+@media (max-width: 650px) {
+
+    #cards section {
+        grid-template-columns: 300px;
+    }
+}

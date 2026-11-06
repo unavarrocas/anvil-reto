@@ -1,10 +1,29 @@
 /* ===== VARIABLES GLOBALES ===== */
 :root {
-
+    --azul-fondo: #1C2F50;
+    --blanco-texto: white;
+    --azul-fondo-header-footer: #142340;
+    --amarillo-detalles: #F47B20;
+    --azul-fondo-card: #26406A;
     --blanco-transparente: rgba(255, 255, 255, 0.1);
     --gris-texto-secundario: #B8C4D9;
     --verde-saldo: #3FD07F;
+    --sombra-blanca: rgba(255, 255, 255, 0.5);
+    --fuente: sans-serif;
+}
 
+/* ===== TODA LA PAGINA ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CUERPO ===== */
+body {
+    background-color: var(--azul-fondo);
+    color: var(--blanco-texto);
+    font-family: var(--fuente);
 }
 
 /* ===== BARRA DE NAVEGACION ===== */
@@ -17,6 +36,10 @@ header {
     padding: 0 20px;
     justify-content: space-between;
     gap: 25px;
+    /* Pegado, dentro del flujo */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
 }
 
 /*Hamburguesa: oculta en PC*/
@@ -84,12 +107,12 @@ header aside:nth-child(4) {
 header aside:nth-child(4) a {
     width: 30px;
     height: 30px;
-    background: url(Imagenes/carritoCompra.png) center / contain no-repeat;
+    background: url(../resources/carritoCompra.png) center / contain no-repeat;
 }
 
 /*Al pasar el ratón cambia al carrito naranja*/
 header aside:nth-child(4) a:hover {
-    background-image: url(Imagenes/carritoCompraNaranja.png);
+    background-image: url(../resources/carritoCompraNaranja.png);
 }
 
 /*Nickname y saldo: uno encima del otro y centrados*/
@@ -111,78 +134,6 @@ header aside:nth-child(4) a:hover {
     color: var(--verde-saldo);
     font-size: 14px;
     font-weight: bold;
-}
-
-/* ===== SECCION TRAILER ===== */
-/* Contenedor general */
-.trailer {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    width: 95%;
-    margin: 48px auto;
-    padding: 32px;
-    background-color: var(--azul-fondo-card);
-    border-radius: 1px;
-}
-
-/* Articulo izquierdo */
-.trailer article {
-    width: 35%;
-}
-
-/* Titulo articulo */
-.trailer h2 {
-    font-size: 32px;
-    margin-bottom: 16px;
-}
-
-/* Texto "TRAILER OFICIAL" */
-/* ::before lo que hace es crear un elemento html dentro de
-    .trailer h2 */
-.trailer h2::before {
-    content: "TRÁILER OFICIAL";
-    /* Para que se ponga encima del texto, por defecto se pone
-    al lado (inline-block) */
-    display: block;
-    color: var(--amarillo-detalles);
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-/* Parrafo frase gancho */
-.trailer p {
-    color: var(--gris-texto-secundario);
-    /* Altura de cada linea, para dejar espacio entre texto */
-    line-height: 1.5;
-    margin-bottom: 24px;
-}
-
-/* Botones descriptivos */
-.trailer ul {
-    display: flex;
-    gap: 8px;
-    list-style: none;
-}
-
-.trailer li {
-    background-color: var(--blanco-transparente);
-    color: var(--gris-texto-secundario);
-    font-size: 13px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-.trailer li:hover {
-    background-color: var(--amarillo-detalles);
-    color: var(--azul-fondo-header-footer);
-}
-
-.trailer video {
-    width: 65%;
-    border-radius: 12px;
 }
 
 /* ===== FOOTER ===== */
@@ -209,7 +160,8 @@ footer img:hover {
     margin-right: 3px;
 }
 
-/* TABLET */
+/* ===== MEDIA QUERIES ===== */
+/*Media queries: TABLET*/
 @media (max-width: 700px) {
 
     /* ===== BARRA DE NAVEGACION ===== */
@@ -222,8 +174,10 @@ footer img:hover {
     que se tenga que mostrar*/
     nav {
         display: none;
+        /* Pegado, fuera del flujo */
         position: fixed;
         top: 70px;
+        bottom: 0;
         left: 0;
         width: 260px;
         height: 100vh;
@@ -250,33 +204,4 @@ footer img:hover {
         display: none;
     }
 
-    /* ===== SECCION TRAILER ===== */
-    /* Contenedor general */
-    .trailer {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-        padding: 20px;
-        margin: 32px auto;
-    }
-
-    /* El articulo y el video ocupan el 100% de ancho
-    y se ponen uno encima del otro */
-    .trailer article,
-    .trailer video {
-        width: 100%;
-    }
-
-    /* Titulo articulo */
-    .trailer h2 {
-        font-size: 24px;
-    }
-
-    /* Botones descriptivos */
-    .trailer ul {
-        justify-content: center;
-    }
 }
-
-/* MOVIL */
-@media (max-width: 480px) {}
