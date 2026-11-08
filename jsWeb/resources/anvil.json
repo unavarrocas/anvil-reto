@@ -4,335 +4,275 @@
       "id_usuario": 1,
       "nombre": "vegetta777",
       "contrasenia": "123456789",
-      "saldo": 120.00
+      "saldo": 120,
+      "id": "53g3h_eCecI"
     },
     {
       "id_usuario": 2,
       "nombre": "willyrex",
       "contrasenia": "123456789",
-      "saldo": 85.50
+      "saldo": 40.21,
+      "id": "mcpOaBSznX4"
     },
     {
       "id_usuario": 3,
       "nombre": "elrubius",
       "contrasenia": "123456789",
-      "saldo": 200.00
+      "saldo": 200,
+      "id": "a4IAk4Grax8"
     },
     {
       "id_usuario": 4,
       "nombre": "auronplay",
       "contrasenia": "123456789",
-      "saldo": 45.75
+      "saldo": 45.75,
+      "id": "rhPiV0LNPWk"
     },
     {
       "id_usuario": 5,
       "nombre": "thegrefg",
       "contrasenia": "123456789",
-      "saldo": 150.25
+      "saldo": 150.25,
+      "id": "Rqd9OJjELk8"
     }
   ],
   "juegos": [
     {
       "id_juego": 1,
-      "nombre": "Rocket League",
-      "precio": 19.99,
-      "descripcion": "Fútbol con coches propulsados por cohetes en partidas rápidas y competitivas.",
-      "pegi": 3
+      "nombre": "Fortnite",
+      "precio": 0,
+      "descripcion": "Battle royale gratuito con construcción, eventos en directo y temporadas constantes.",
+      "pegi": 12,
+      "imagen": "../resources/Caratulas/fortnite.jpg",
+      "id": "96LVaziRqhU"
     },
     {
       "id_juego": 2,
-      "nombre": "Mario Kart 8 Deluxe",
-      "precio": 59.99,
-      "descripcion": "Carreras de karts con los personajes de Nintendo, objetos locos y multijugador local y online.",
-      "pegi": 3
-    },
-    {
-      "id_juego": 3,
-      "nombre": "EA Sports FC 24",
-      "precio": 69.99,
-      "descripcion": "Simulador de fútbol con ligas, clubes y jugadores con licencia oficial.",
-      "pegi": 3
-    },
-    {
-      "id_juego": 4,
-      "nombre": "Tetris Effect: Connected",
-      "precio": 39.99,
-      "descripcion": "El clásico de puzles reimaginado con música y efectos visuales envolventes.",
-      "pegi": 3
-    },
-    {
-      "id_juego": 5,
-      "nombre": "Minecraft",
-      "precio": 29.99,
-      "descripcion": "Sandbox de bloques: construye, explora, sobrevive y crea lo que imagines.",
-      "pegi": 7
-    },
-    {
-      "id_juego": 6,
-      "nombre": "Hollow Knight",
-      "precio": 14.99,
-      "descripcion": "Metroidvania de acción y aventura en 2D ambientado en el vasto reino subterráneo de Hallownest.",
-      "pegi": 7
-    },
-    {
-      "id_juego": 7,
-      "nombre": "Stardew Valley",
-      "precio": 13.99,
-      "descripcion": "Simulador de granja y vida rural: cultiva, pesca, explora minas y haz amistad con los vecinos del pueblo.",
-      "pegi": 7
-    },
-    {
-      "id_juego": 8,
-      "nombre": "Among Us",
-      "precio": 3.99,
-      "descripcion": "Juego social de deducción: descubre quién es el impostor antes de que sabotee la nave.",
-      "pegi": 7
-    },
-    {
-      "id_juego": 9,
       "nombre": "Portal 2",
       "precio": 9.99,
       "descripcion": "Juego de puzles en primera persona con portales, cooperativo y de un jugador, ambientado en los laboratorios de Aperture Science.",
-      "pegi": 12
+      "pegi": 12,
+      "imagen": "../resources/Caratulas/portal2.png",
+      "id": "XRtS4D1ps1Q"
     },
     {
-      "id_juego": 10,
-      "nombre": "Terraria",
-      "precio": 9.99,
-      "descripcion": "Aventura sandbox en 2D: excava, combate jefes, construye y explora un mundo generado al azar.",
-      "pegi": 12
+      "id_juego": 3,
+      "nombre": "Rocket League",
+      "precio": 19.99,
+      "descripcion": "Fútbol con coches propulsados por cohetes en partidas rápidas y competitivas.",
+      "pegi": 3,
+      "imagen": "../resources/Caratulas/rocketLeague.jpg",
+      "id": "_5iwqqzkSmY"
     },
     {
-      "id_juego": 11,
-      "nombre": "Fortnite",
-      "precio": 0.00,
-      "descripcion": "Battle royale gratuito con construcción, eventos en directo y temporadas constantes.",
-      "pegi": 12
+      "id_juego": 4,
+      "nombre": "Minecraft",
+      "precio": 29.99,
+      "descripcion": "Sandbox de bloques: construye, explora, sobrevive y crea lo que imagines.",
+      "pegi": 7,
+      "imagen": "../resources/Caratulas/minecraft.png",
+      "id": "dFj8txjbqxY"
     },
     {
-      "id_juego": 12,
-      "nombre": "Overwatch 2",
-      "precio": 0.00,
-      "descripcion": "Shooter de héroes por equipos con habilidades únicas y partidas 5 contra 5.",
-      "pegi": 12
-    },
-    {
-      "id_juego": 13,
-      "nombre": "Hogwarts Legacy",
-      "precio": 59.99,
-      "descripcion": "RPG de mundo abierto ambientado en el mundo mágico del siglo XIX: asiste a clases y descubre secretos.",
-      "pegi": 16
-    },
-    {
-      "id_juego": 14,
-      "nombre": "Horizon Zero Dawn",
-      "precio": 49.99,
-      "descripcion": "Aventura de acción en un mundo postapocalíptico dominado por criaturas mecánicas.",
-      "pegi": 16
-    },
-    {
-      "id_juego": 15,
-      "nombre": "Marvel's Spider-Man Remastered",
-      "precio": 59.99,
-      "descripcion": "Balancéate por Nueva York como Peter Parker en una aventura de acción de mundo abierto.",
-      "pegi": 16
-    },
-    {
-      "id_juego": 16,
-      "nombre": "Lies of P",
-      "precio": 59.99,
-      "descripcion": "Soulslike oscuro inspirado en Pinocho, ambientado en la ciudad de Krat en plena Belle Époque.",
-      "pegi": 16
-    },
-    {
-      "id_juego": 17,
+      "id_juego": 5,
       "nombre": "The Witcher 3: Wild Hunt",
       "precio": 39.99,
       "descripcion": "RPG de mundo abierto en el que encarnas a Geralt de Rivia, un cazador de monstruos en busca de su hija adoptiva.",
-      "pegi": 18
+      "pegi": 18,
+      "imagen": "../resources/Caratulas/theWitcherIII.jpg",
+      "id": "Ot53dV9Joek"
     },
     {
-      "id_juego": 18,
+      "id_juego": 6,
+      "nombre": "Horizon Zero Dawn",
+      "precio": 49.99,
+      "descripcion": "Aventura de acción en un mundo postapocalíptico dominado por criaturas mecánicas.",
+      "pegi": 16,
+      "imagen": "../resources/Caratulas/horizonZeroDawn.webp",
+      "id": "_3iGju7qcnc"
+    },
+    {
+      "id_juego": 7,
+      "nombre": "Hogwarts Legacy",
+      "precio": 59.99,
+      "descripcion": "RPG de mundo abierto ambientado en el mundo mágico del siglo XIX: asiste a clases y descubre secretos.",
+      "pegi": 16,
+      "imagen": "../resources/Caratulas/howartsLegacy.jpg",
+      "id": "_JSNyFuMMCc"
+    },
+    {
+      "id_juego": 8,
+      "nombre": "EA Sports FC 24",
+      "precio": 69.99,
+      "descripcion": "Simulador de fútbol con ligas, clubes y jugadores con licencia oficial.",
+      "pegi": 3,
+      "imagen": "../resources/Caratulas/FIFA.avif",
+      "id": "PBxJb0SCnAo"
+    },
+    {
+      "id_juego": 9,
+      "nombre": "Mario Kart World",
+      "precio": 79.99,
+      "descripcion": "Carreras de karts en un mundo abierto interconectado, con hasta 24 corredores y personajes de Nintendo.",
+      "pegi": 3,
+      "imagen": "../resources/Caratulas/marioKartWorld.jpg",
+      "id": "JAwE-inSatM"
+    },
+    {
+      "id_juego": 10,
+      "nombre": "Call of Duty: Black Ops 7",
+      "precio": 89.99,
+      "descripcion": "Shooter en primera persona con campaña, multijugador competitivo y modo Zombis.",
+      "pegi": 18,
+      "imagen": "../resources/Caratulas/COD.webp",
+      "id": "_zaOOcyQWwg"
+    },
+    {
+      "id_juego": 11,
       "nombre": "Grand Theft Auto VI",
       "precio": 99.99,
       "descripcion": "Acción en mundo abierto en Leonida con Lucia y Jason como protagonistas y la ciudad de Vice City.",
-      "pegi": 18
-    },
-    {
-      "id_juego": 19,
-      "nombre": "Red Dead Redemption 2",
-      "precio": 59.99,
-      "descripcion": "Western épico de mundo abierto siguiendo a Arthur Morgan y la banda de Van der Linde.",
-      "pegi": 18
-    },
-    {
-      "id_juego": 20,
-      "nombre": "Cyberpunk 2077",
-      "precio": 49.99,
-      "descripcion": "RPG de acción en Night City, una megalópolis obsesionada con el poder y la modificación corporal.",
-      "pegi": 18
+      "pegi": 18,
+      "imagen": "../resources/Caratulas/GTAVI.jpg",
+      "id": "5MSDEnNRsGw"
     }
   ],
   "usuarios_juegos": [
     {
-      "id_usuario": 1,
-      "id_juego": 5
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 10
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 17
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 19
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 13
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 7
-    },
-    {
-      "id_usuario": 1,
-      "id_juego": 11
-    },
-    {
+      "id": "1",
       "id_usuario": 1,
       "id_juego": 1
     },
     {
-      "id_usuario": 2,
+      "id": "2",
+      "id_usuario": 1,
+      "id_juego": 2
+    },
+    {
+      "id": "3",
+      "id_usuario": 1,
       "id_juego": 5
     },
     {
-      "id_usuario": 2,
-      "id_juego": 18
+      "id": "4",
+      "id_usuario": 1,
+      "id_juego": 7
     },
     {
-      "id_usuario": 2,
+      "id": "5",
+      "id_usuario": 1,
+      "id_juego": 10
+    },
+    {
+      "id": "6",
+      "id_usuario": 1,
       "id_juego": 11
     },
     {
-      "id_usuario": 2,
-      "id_juego": 3
-    },
-    {
-      "id_usuario": 2,
-      "id_juego": 12
-    },
-    {
-      "id_usuario": 2,
-      "id_juego": 20
-    },
-    {
-      "id_usuario": 2,
-      "id_juego": 15
-    },
-    {
-      "id_usuario": 2,
-      "id_juego": 9
-    },
-    {
+      "id": "13",
       "id_usuario": 3,
-      "id_juego": 5
+      "id_juego": 1
     },
     {
-      "id_usuario": 3,
-      "id_juego": 8
-    },
-    {
-      "id_usuario": 3,
-      "id_juego": 18
-    },
-    {
-      "id_usuario": 3,
-      "id_juego": 9
-    },
-    {
+      "id": "14",
       "id_usuario": 3,
       "id_juego": 2
     },
     {
+      "id": "15",
       "id_usuario": 3,
-      "id_juego": 16
+      "id_juego": 5
     },
     {
-      "id_usuario": 3,
-      "id_juego": 20
-    },
-    {
+      "id": "16",
       "id_usuario": 3,
       "id_juego": 6
     },
     {
-      "id_usuario": 4,
+      "id": "17",
+      "id_usuario": 3,
       "id_juego": 8
     },
     {
-      "id_usuario": 4,
-      "id_juego": 18
+      "id": "18",
+      "id_usuario": 3,
+      "id_juego": 9
     },
     {
+      "id": "19",
       "id_usuario": 4,
-      "id_juego": 5
+      "id_juego": 3
     },
     {
+      "id": "20",
       "id_usuario": 4,
       "id_juego": 4
     },
     {
+      "id": "21",
       "id_usuario": 4,
-      "id_juego": 14
+      "id_juego": 5
     },
     {
-      "id_usuario": 4,
-      "id_juego": 19
-    },
-    {
+      "id": "22",
       "id_usuario": 4,
       "id_juego": 7
     },
     {
+      "id": "23",
+      "id_usuario": 4,
+      "id_juego": 8
+    },
+    {
+      "id": "24",
       "id_usuario": 4,
       "id_juego": 10
     },
     {
-      "id_usuario": 5,
-      "id_juego": 11
-    },
-    {
+      "id": "25",
       "id_usuario": 5,
       "id_juego": 1
     },
     {
+      "id": "26",
+      "id_usuario": 5,
+      "id_juego": 2
+    },
+    {
+      "id": "27",
       "id_usuario": 5,
       "id_juego": 3
     },
     {
-      "id_usuario": 5,
-      "id_juego": 12
-    },
-    {
-      "id_usuario": 5,
-      "id_juego": 15
-    },
-    {
-      "id_usuario": 5,
-      "id_juego": 17
-    },
-    {
-      "id_usuario": 5,
-      "id_juego": 14
-    },
-    {
+      "id": "28",
       "id_usuario": 5,
       "id_juego": 6
+    },
+    {
+      "id": "29",
+      "id_usuario": 5,
+      "id_juego": 9
+    },
+    {
+      "id": "30",
+      "id_usuario": 5,
+      "id_juego": 11
+    },
+    {
+      "id_usuario": 2,
+      "id_juego": 8,
+      "id": "DRWpLJSUTD8"
+    },
+    {
+      "id_usuario": 2,
+      "id_juego": 1,
+      "id": "GqWhAicVWQY"
+    },
+    {
+      "id_usuario": 2,
+      "id_juego": 2,
+      "id": "Zct7sugX63Y"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

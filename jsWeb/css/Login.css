@@ -16,12 +16,27 @@ main {
 
 /* ===== FORMULARIO ===== */
 form {
+    /* Para que funcione el absolute de btnTema */
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 360px;
     padding: 32px;
     background-color: var(--azul-fondo-card);
     border-radius: 10px;
+}
+
+/* Boton modo claro/oscuro: esquina superior derecha de la tarjeta */
+#btnTema {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    padding: 4px;
+    margin-top: 0;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 /* Logo */
@@ -65,9 +80,14 @@ input {
     margin-bottom: 16px;
 }
 
+/* Inputs en modo claro */
+body.claro input {
+    background-color: var(--azul-fondo);
+}
+
 /* Texto errores */
 #mensajeError {
-    color: #ff6b6b;
+    color: var(--rojo-error);
     font-size: 14px;
     min-height: 1.2em;
 }
