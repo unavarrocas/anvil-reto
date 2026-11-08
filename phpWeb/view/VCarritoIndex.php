@@ -49,6 +49,11 @@
 
         <!-- Carrito -->
         <div>
+            <?php if (isset($_SESSION["mensaje"])): ?>
+                <p><?php echo ($_SESSION["mensaje"]); ?></p>
+                <?php unset($_SESSION["mensaje"]); ?>
+            <?php endif; ?>
+
             <?php if (!empty($data)): ?>
                 <?php foreach ($data as $juego): ?>
                     <article>

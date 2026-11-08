@@ -153,6 +153,11 @@ switch ($entity) {
                 $controller->vaciar();
                 break;
 
+            case "comprar":
+                $controller = new CCarrito();
+                $controller->comprar();
+                break;
+
             default:
                 header("Location: index.php?entity=juego&action=index");
         }

@@ -75,7 +75,9 @@
                                 <span><?php echo ($juego['precio']); ?> €</span>
                             </div>
                             <p><?php echo ($juego['descripcion']); ?></p>
-                            <?php if (in_array($juego['id_juego'], $carrito)): ?>
+                            <?php if (in_array($juego['id_juego'], $propios)): ?>
+                                <button disabled>En tu biblioteca</button> <!--Esto es cuando el usuario ya tiene el juego-->
+                            <?php elseif (in_array($juego['id_juego'], $carrito)): ?>
                                 <button disabled>Añadido al carrito</button> <!--Esto es cuando el juego esta en el carrito, el boton se desactive-->
                             <?php else: ?>
                                 <form method="post" action="index.php?entity=carrito&action=store&id=<?php echo ($juego['id_juego']); ?>">

@@ -9,20 +9,26 @@ class MBiblioteca
         $this->db = DB::getConexion();
     }
 
-    function index()
+    function index($idUsuario)
     {
         $data = null;
-        $sql = "SELECT * FROM `usuarios_juegos`";
+        $sql = "SELECT juegos.* FROM `usuarios_juegos`
+        INNER JOIN `juegos` ON usuarios_juegos.id_juego = juegos.id_juego
+        WHERE usuarios_juegos.id_usuario = ?";
 
-        $query = $this->db->query($sql);
+        $query = $this->db->prepare($sql);
+        $query->bind_param("i", $idUsuario);
+        $query->execute();
 
-        while ($row = $query->fetch_assoc()) {
+        $resultado = $query->get_result();
+
+        while ($row = $resultado->fetch_assoc()) {
             $data[] = $row;
         }
 
         $query->close();
 
-        return  $data;
+        return $data;
     }
 
     function show($idUsuario, $idJuego)
