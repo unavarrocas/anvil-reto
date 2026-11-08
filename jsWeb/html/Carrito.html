@@ -29,6 +29,8 @@
         </nav>
 
         <aside>
+            <!-- Boton modo claro/oscuro -->
+            <button id="btnTema" title="Cambiar tema">🌓</button>
             <!-- Carrito -->
             <a href="Carrito.html" title="Carrito"></a>
             <!-- Perfil personalizado -->
@@ -48,43 +50,13 @@
         <h2>CESTA</h2>
 
         <!-- Carrito -->
-        <div>
-            <article>
+        <div id="lista-carrito">
 
-                <img src="../resources/portadaPruebas.jpg">
-                <h3>Turbojuego 1</h3>
-                <p>PEGI 7</p>
-
-                <p>20€</p>
-                <img src="../resources/papelera.png">
-
-            </article>
-
-            <article>
-
-                <img src="../resources/portadaPruebas.jpg">
-                <h3>Turbojuego 2</h3>
-                <p>PEGI 7</p>
-
-                <p>20€</p>
-                <img src="../resources/papelera.png">
-
-            </article>
-
-            <article>
-
-                <img src="../resources/portadaPruebas.jpg">
-                <h3>Turbojuego 3</h3>
-                <p>PEGI 7</p>
-
-                <p>20€</p>
-                <img src="../resources/papelera.png">
-
-            </article>
+            <p id="total">Total: 0 €</p>
 
             <div class="acciones-carrito">
-                <button>Vaciar carrito</button>
-                <button>Comprar ahora</button>
+                <button id="vaciar">Vaciar carrito</button>
+                <button id="comprar">Comprar ahora</button>
             </div>
 
         </div>
@@ -98,6 +70,7 @@
 
     <!--Elace al script-->
     <script src="../js/Script.js"></script>
+    <script src="../js/Carrito.js"></script>
 </body>
 
 </html>

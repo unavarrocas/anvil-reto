@@ -29,6 +29,8 @@
     </nav>
 
     <aside>
+      <!-- Boton modo claro/oscuro -->
+      <button id="btnTema" title="Cambiar tema">🌓</button>
       <!-- Carrito -->
       <a href="Carrito.html" title="Carrito"></a>
       <!-- Perfil personalizado -->
@@ -50,13 +52,16 @@
 
       <div>
         <label for="precio-min">Desde</label>
-        <input type="text" id="precio-min" placeholder="0 €" required>
+        <input type="text" id="precio-min" placeholder="0" required>
       </div>
 
       <div>
         <label for="precio-max">Hasta</label>
-        <input type="text" id="precio-max" placeholder="100 €" required>
+        <input type="text" id="precio-max" placeholder="100" required>
       </div>
+
+      <p id="mensajeErrorMin"></p>
+      <p id="mensajeErrorMax"></p>
 
       <button id="filtrar">Filtrar</button>
       <button type="reset" id="limpiar">Limpiar</button>
