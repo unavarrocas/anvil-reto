@@ -185,6 +185,17 @@
     cursor: pointer;
 }
 
+#cards form {
+    margin-top: auto;
+}
+
+/*Boton de un juego que ya esta en el carrito*/
+#cards button:disabled {
+    background: var(--gris-texto-secundario);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 /* ===== SECCION TRAILER ===== */
 /* Contenedor general */
 .trailer {
@@ -307,6 +318,7 @@
 
 /* Query para ajustar los videojuegos de 1 en 1 y el precio*/
 @media (max-width: 650px) {
+
     /* Filtro precio */
     #filtro-precio {
         width: 300px;

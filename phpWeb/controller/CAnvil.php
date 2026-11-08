@@ -128,9 +128,24 @@ switch ($entity) {
 
     case "carrito":
         switch ($action) {
+            case "index":
+                $controller = new CCarrito();
+                $controller->index();
+                break;
+
             case "store":
                 $controller = new CCarrito();
                 $controller->store($id);
+                break;
+
+            case "destroy":
+                $controller = new CCarrito();
+                $controller->destroy($id);
+                break;
+
+            case "vaciar":
+                $controller = new CCarrito();
+                $controller->vaciar();
                 break;
 
             default:

@@ -47,6 +47,7 @@
         <section>
 
             <?php if (!empty($data) && is_array($data)): ?>
+                <?php $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : []; ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
                         <!--No hay imagenes de juegos todavia, hay que indicar la ruta-->
@@ -58,7 +59,13 @@
                                 <span><?php echo ($juego['precio']); ?> €</span>
                             </div>
                             <p><?php echo ($juego['descripcion']); ?></p>
-                            <button>Añadir al carrito</button>
+                            <?php if (in_array($juego['id_juego'], $carrito)): ?>
+                                <button disabled>Añadido al carrito</button> <!--Esto es cuando el juego esta en el carrito, el boton se desactive-->
+                            <?php else: ?>
+                                <form method="post" action="index.php?entity=carrito&action=store&id=<?php echo ($juego['id_juego']); ?>">
+                                    <button>Añadir al carrito</button>
+                                </form>
+                            <?php endif; ?>
                         </aside>
                     </article>
                 <?php endforeach; ?>
