@@ -22,6 +22,7 @@ class CLogin {
         if ($login) {
 
             $_SESSION["usuario"] = $login["id_usuario"];
+            $_SESSION["id_usuario"] = $login["id_usuario"]; /*Esta es la que usan el carrito, la biblioteca y el navbar*/
             $_SESSION["rol"] = $login["rol"];
             header("Location: index.php?entity=juego&action=index");
             exit();

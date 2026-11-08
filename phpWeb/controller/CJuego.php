@@ -14,11 +14,10 @@ class CJuego
     function index()
     {
         $data = $this->model->index();
-        $esAdmin = ($_SESSION["rol"] ?? null) == "admin";
-
         /*Ids de los juegos que el usuario ya tiene en su biblioteca*/
         $biblioteca = $this->modelBiblioteca->index($_SESSION["id_usuario"]);
         $propios = $biblioteca ? array_column($biblioteca, "id_juego") : [];
+        $esAdmin = ($_SESSION["rol"] ?? null) == "admin";
         require __DIR__ . "/../view/VJuegoIndex.php";
     }
 
