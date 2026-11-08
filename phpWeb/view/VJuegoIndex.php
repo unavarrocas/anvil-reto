@@ -46,10 +46,26 @@
 
         <section>
 
+            <?php if ($esAdmin): ?>
+            <a class="barra-anadir" href="index.php?entity=juego&action=create">
+                <span>+</span> Añadir juego a la tienda
+            </a>
+            <?php endif; ?>
+
             <?php if (!empty($data) && is_array($data)): ?>
                 <?php $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : []; ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
+
+                        <?php if ($esAdmin): ?>
+                            <div class="acciones-admin">
+                                <a href="index.php?entity=juego&action=edit&id=<?php echo ($juego['id_juego']); ?>"
+                                title="Editar juego">
+                                
+                                </a>
+                            </div>
+                        <?php endif; ?>
+
                         <!--No hay imagenes de juegos todavia, hay que indicar la ruta-->
                         <img src="resources/portadaPruebas.jpg" alt="<?php echo ($juego['nombre']); ?>">
                         <aside>

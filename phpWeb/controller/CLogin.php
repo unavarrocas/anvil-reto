@@ -21,6 +21,8 @@ class CLogin {
 
         if ($login) {
 
+            $_SESSION["usuario"] = $login["id_usuario"];
+            $_SESSION["rol"] = $login["rol"];
             header("Location: index.php?entity=juego&action=index");
             exit();
 
@@ -32,5 +34,12 @@ class CLogin {
         }
 
     }
-    function logout(){}
+    function logout(){
+
+        session_unset();
+        session_destroy();
+        header("Location: index.php?entity=login&action=index");
+        exit();
+
+    }
 }
