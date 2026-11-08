@@ -11,7 +11,7 @@ class CBiblioteca
 
     function index()
     {
-        $data = $this->model->index();
+        $data = $this->model->index($_SESSION["id_usuario"]);
         require __DIR__ . "/../view/VBibliotecaIndex.php";
     }
 
