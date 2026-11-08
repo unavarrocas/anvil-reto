@@ -12,6 +12,7 @@ class CJuego
     function index()
     {
         $data = $this->model->index();
+        $esAdmin = ($_SESSION["rol"] ?? null) == "admin";
         require __DIR__ . "/../view/VJuegoIndex.php";
     }
 
@@ -23,7 +24,7 @@ class CJuego
 
     function  create()
     {
-        /* require __DIR__ . "/../view/VEscudoCreate.php"; */
+        require __DIR__ . "/../view/VJuegoCreate.php";
     }
 
     function  store()
@@ -35,13 +36,14 @@ class CJuego
 
         $this->model->store($nombre, $precio, $descripcion, $pegi);
 
-        /* header("Location: index.php?entity=escudo"); */
+        header("Location: index.php?entity=juego&action=index");
+        exit();
     }
 
     function  edit($id)
     {
         $data = $this->model->show($id);
-        /* require __DIR__ . "/../view/VEscudoEdit.php"; */
+        require __DIR__ . "/../view/VJuegoEdit.php";
     }
 
     function  update($id)
@@ -53,7 +55,8 @@ class CJuego
 
         $this->model->update($nombre, $precio, $descripcion, $pegi, $id);
 
-        /* header("Location: index.php"); */
+        header("Location: index.php?entity=juego&action=index");
+        exit();
     }
 
     function destroy($id)

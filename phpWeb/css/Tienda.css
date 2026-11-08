@@ -268,6 +268,63 @@
     border-radius: 12px;
 }
 
+/* Boton añadir juego admin */
+
+#cards .barra-anadir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    grid-column: 1 / -1;
+    flex-basis: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    border: 2px dashed #ff8c00;
+    border-radius: 8px;
+    color: #ff8c00;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#cards .barra-anadir span {
+    font-size: 22px;
+    line-height: 1;
+}
+
+#cards .barra-anadir:hover {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+/* Boton para editar juegos admin */
+
+#cards article {
+    position: relative;
+}
+
+.acciones-admin {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+}
+
+.acciones-admin a {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url("../resources/lapiz_editar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.acciones-admin a:hover {
+    background-image: url("../resources/lapiz_editar_naranja.png");
+}
+
 /* ===== MEDIA QUERIES ===== */
 /* Query para ajustar los videojuegos de 3 en 3 */
 @media (max-width: 1290px) {
