@@ -23,14 +23,14 @@
         </aside>
 
         <nav>
-            <a href="Tienda.html" class="actual">Tienda</a>
-            <a href="Biblioteca.html">Biblioteca</a>
-            <a href="Carrito.html">Carrito</a>
+            <a href="index.php?entity=juego&action=index" class="actual">Tienda</a>
+            <a href="index.php?entity=biblioteca&action=index">Biblioteca</a>
+            <a href="index.php?entity=carrito&action=index">Carrito</a>
         </nav>
 
         <aside>
             <!-- Carrito -->
-            <a href="Carrito.html" title="Carrito"></a>
+            <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p>Nickname</p>
@@ -105,7 +105,7 @@
 
     <!--Elaces a los scripts-->
     <script src="js/Script.js"></script>
-    <script src="js/Tienda.js"></script>
+    <!-- <script src="js/Tienda.js"></script> -->
 
 </body>
 

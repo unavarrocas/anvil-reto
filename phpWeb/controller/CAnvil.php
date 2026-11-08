@@ -1,4 +1,6 @@
 <?php
+session_start(); /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
+$_SESSION['usuario'] = "3"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
 require_once __DIR__ . "/../db/DB.php";
 require_once __DIR__ . "/../model/MBiblioteca.php";
 require_once __DIR__ . "/../model/MJuego.php";
@@ -8,9 +10,10 @@ require_once __DIR__ . "/CBiblioteca.php";
 require_once __DIR__ . "/CJuego.php";
 require_once __DIR__ . "/CPerfil.php";
 require_once __DIR__ . "/CLogin.php";
+require_once __DIR__ . "/CCarrito.php";
 
-
-$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login";
+/*$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login";*/ /*Esta es la que hay que dejar, hay que quitar la de abajo */
+$entity = isset($_GET["entity"]) ? $_GET["entity"] : "juego"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
@@ -119,6 +122,19 @@ switch ($entity) {
 
             default:
                 header("Location: index.php?entity=biblioteca&action=index");
+        }
+
+        break;
+
+    case "carrito":
+        switch ($action) {
+            case "store":
+                $controller = new CCarrito();
+                $controller->store($id);
+                break;
+
+            default:
+                header("Location: index.php?entity=juego&action=index");
         }
 
         break;

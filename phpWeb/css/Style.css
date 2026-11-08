@@ -1,0 +1,207 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    --azul-fondo: #1C2F50;
+    --blanco-texto: white;
+    --azul-fondo-header-footer: #142340;
+    --amarillo-detalles: #F47B20;
+    --azul-fondo-card: #26406A;
+    --blanco-transparente: rgba(255, 255, 255, 0.1);
+    --gris-texto-secundario: #B8C4D9;
+    --verde-saldo: #3FD07F;
+    --sombra-blanca: rgba(255, 255, 255, 0.5);
+    --fuente: sans-serif;
+}
+
+/* ===== TODA LA PAGINA ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CUERPO ===== */
+body {
+    background-color: var(--azul-fondo);
+    color: var(--blanco-texto);
+    font-family: var(--fuente);
+}
+
+/* ===== BARRA DE NAVEGACION ===== */
+/* Principal */
+header {
+    background-color: var(--azul-fondo-header-footer);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 25px;
+    /* Pegado, dentro del flujo */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+/*Hamburguesa: oculta en PC*/
+header button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--blanco-texto);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Logo y "ANVIL" */
+header aside:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blanco-texto);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header aside:nth-child(2) img {
+    height: 55px;
+}
+
+/* Links de navegacion */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--blanco-texto);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--amarillo-detalles);
+}
+
+/* Subrayar link de pagina actual */
+.actual {
+    border-bottom: var(--amarillo-detalles) solid 3px;
+}
+
+/* Ocultar la palabra "carrito" en tamaño completo
+(Se sustituye con un icono) */
+nav a:last-child {
+    display: none;
+}
+
+/*Carrito + perfil: uno al lado del otro*/
+header aside:nth-child(4) {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/*Icono del carrito*/
+header aside:nth-child(4) a {
+    width: 30px;
+    height: 30px;
+    background: url(../resources/carritoCompra.png) center / contain no-repeat;
+}
+
+/*Al pasar el ratón cambia al carrito naranja*/
+header aside:nth-child(4) a:hover {
+    background-image: url(../resources/carritoCompraNaranja.png);
+}
+
+/*Nickname y saldo: uno encima del otro y centrados*/
+#perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+}
+
+/*Nickname*/
+#perfil p:first-of-type {
+    color: var(--gris-texto-secundario);
+    font-weight: bold;
+}
+
+/*Saldo*/
+#perfil p:last-of-type {
+    color: var(--verde-saldo);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+/* Contenedor general */
+footer {
+    margin-top: 20px;
+    background-color: var(--azul-fondo-header-footer);
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imágen en contenedor */
+footer img {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+}
+
+footer img:hover {
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/*Media queries: TABLET*/
+@media (max-width: 700px) {
+
+    /* ===== BARRA DE NAVEGACION ===== */
+    /*Aparece la hamburguesa*/
+    header button {
+        display: block;
+    }
+
+    /*El nav se convierte en panel lateral oculto hasta
+    que se tenga que mostrar*/
+    nav {
+        display: none;
+        /* Pegado, fuera del flujo */
+        position: fixed;
+        top: 70px;
+        bottom: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: var(--azul-fondo-header-footer);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    /*Al pulsar la hamburguesa se abre*/
+    nav.activo {
+        display: flex;
+    }
+
+    /*Aparece "Carrito" en el menu*/
+    nav a:last-child {
+        display: block;
+    }
+
+    /*Desaparece el icono del carrito*/
+    header aside:nth-child(4) a {
+        display: none;
+    }
+
+}

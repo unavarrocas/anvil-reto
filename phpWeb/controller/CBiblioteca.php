@@ -12,7 +12,7 @@ class CBiblioteca
     function index()
     {
         $data = $this->model->index();
-        /* require __DIR__ . "/../view/VEscudoIndex.php"; */
+        require __DIR__ . "/../view/VBibliotecaIndex.php";
     }
 
     function show($idUsuario)
