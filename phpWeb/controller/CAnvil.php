@@ -1,6 +1,7 @@
 <?php
 session_start(); /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
-$_SESSION['usuario'] = "3"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
+$_SESSION['usuario'] = "Prueba"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
+$_SESSION['id_usuario'] = 2; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
 require_once __DIR__ . "/../db/DB.php";
 require_once __DIR__ . "/../model/MBiblioteca.php";
 require_once __DIR__ . "/../model/MJuego.php";

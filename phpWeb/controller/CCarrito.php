@@ -40,8 +40,11 @@ class CCarrito
     {
         $id = (int) $id;
 
-        /*Solo lo metemos si no esta ya*/
-        if (!in_array($id, $_SESSION["carrito"])) {
+        /*Si ya lo tiene en su biblioteca, no se puede comprar otra vez*/
+        $yaLoTiene = $this->modelBiblioteca->show($_SESSION["id_usuario"], $id);
+
+        /*Solo lo metemos si no esta ya en el carrito ni en su biblioteca*/
+        if (!$yaLoTiene && !in_array($id, $_SESSION["carrito"])) {
             $_SESSION["carrito"][] = $id;
         }
 
