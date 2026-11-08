@@ -18,6 +18,17 @@ $entity = isset($_GET["entity"]) ? $_GET["entity"] : "juego"; /*Esto hay que qui
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
+/*Cada vez que se carga una pagina, guardamos el nickname y el saldo del usuario en la sesion*/
+if (isset($_SESSION["id_usuario"])) {
+    $modelPerfil = new MPerfil();
+    $perfilUsuario = $modelPerfil->show($_SESSION["id_usuario"]);
+
+    if ($perfilUsuario) {
+        $_SESSION["nickname"] = $perfilUsuario["nickname"];
+        $_SESSION["saldo"] = $perfilUsuario["saldo"];
+    }
+}
+
 switch ($entity) {
     case "login";
         switch ($action) {
