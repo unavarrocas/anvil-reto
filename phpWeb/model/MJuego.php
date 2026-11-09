@@ -71,14 +71,4 @@ class MJuego
         $query->close();
     }
 
-    function destroy($id)
-    {
-        $query = $this->db->prepare("DELETE FROM juegos WHERE `juegos`.`id_juego` = ?");
-
-        $query->bind_param("i", $id);
-
-        $query->execute();
-
-        $query->close();
-    }
 }

@@ -21,10 +21,6 @@ class CBiblioteca
         $data = $this->model->show($idUsuario, $idJuego);
     }
 
-    function  create()
-    {
-    }
-
     function  store($idUsuario)
     {
         $idJuego = $_POST["idJuego"];

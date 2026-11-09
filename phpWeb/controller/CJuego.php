@@ -62,10 +62,4 @@ class CJuego
         header("Location: index.php?entity=juego&action=index");
         exit();
     }
-
-    function destroy($id)
-    {
-        $this->model->destroy($id);
-
-    }
 }

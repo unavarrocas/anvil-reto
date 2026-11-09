@@ -81,11 +81,6 @@ switch ($entity) {
                 $controller->update($id);
                 break;
 
-            case "destroy":
-                $controller = new CJuego();
-                $controller->destroy($id);
-                break;
-
             default:
                 header("Location: index.php?entity=juego&action=index");
         }
@@ -102,11 +97,6 @@ switch ($entity) {
             case "show":
                 $controller = new CBiblioteca();
                 $controller->show($id);
-                break;
-
-            case "create":
-                $controller = new CBiblioteca();
-                $controller->create();
                 break;
 
             case "store":
@@ -170,24 +160,10 @@ switch ($entity) {
 
     case "perfil":
         switch ($action) {
-            case "index":
-                $controller = new CPerfil();
-                $controller->index();
-                break;
 
             case "show":
                 $controller = new CPerfil();
                 $controller->show($id);
-                break;
-
-            case "create":
-                $controller = new CPerfil();
-                $controller->create();
-                break;
-
-            case "store":
-                $controller = new CPerfil();
-                $controller->store($id);
                 break;
 
             case "edit":
@@ -198,11 +174,6 @@ switch ($entity) {
             case "update":
                 $controller = new CPerfil();
                 $controller->update($id);
-                break;
-
-            case "destroy":
-                $controller = new CPerfil();
-                $controller->destroy($id);
                 break;
 
             default:
