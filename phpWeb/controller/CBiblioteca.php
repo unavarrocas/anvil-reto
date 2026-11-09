@@ -19,12 +19,10 @@ class CBiblioteca
     {
         $idJuego = $_POST["idJuego"];
         $data = $this->model->show($idUsuario, $idJuego);
-        /* require __DIR__ . "/../view/VEscudoShow.php"; */
     }
 
     function  create()
     {
-        /* require __DIR__ . "/../view/VEscudoCreate.php"; */
     }
 
     function  store($idUsuario)
@@ -33,7 +31,6 @@ class CBiblioteca
 
         $this->model->store($idUsuario, $idJuego);
 
-        /* header("Location: index.php?entity=escudo"); */
     }
 
     function  edit($idUsuario)
@@ -41,7 +38,6 @@ class CBiblioteca
         $idJuego = $_POST["idJuego"];
 
         $data = $this->model->show($idUsuario, $idJuego);
-        /* require __DIR__ . "/../view/VEscudoEdit.php"; */
     }
 
     function  update($idUsuario)
@@ -51,8 +47,6 @@ class CBiblioteca
         $idJuegoNew = $_POST["idJuegoNew"];
 
         $this->model->update($idUsuarioNew, $idJuegoNew, $idUsuario, $idJuego);
-
-        /* header("Location: index.php"); */
     }
 
     function destroy($idJuego)
