@@ -28,7 +28,7 @@ if (!isset($_SESSION["usuario"])) {
 
         <aside>
             <img src="resources/logoAnvil.png" alt="Logo de Anvil">
-            <span>ANVIL</span>
+            <span>ANVIL <?php if ($_SESSION["rol"] == "admin"){echo "(ADMIN)";};?></span>
         </aside>
 
         <nav>
@@ -40,6 +40,8 @@ if (!isset($_SESSION["usuario"])) {
         <aside>
             <!-- Carrito -->
             <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
+            <!-- Cerrar sesión -->
+            <a href="index.php?entity=login&action=logout">Cerrar sesión</a>
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p><?php echo ($_SESSION["nickname"]); ?></p>
