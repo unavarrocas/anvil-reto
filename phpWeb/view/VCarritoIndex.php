@@ -4,8 +4,6 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: index.php?entity=login&action=index");
     exit();
 }
-
-/** @var array $data */ /** @var float|int $total */
 ?>
 <!DOCTYPE html>
 <html lang="es">

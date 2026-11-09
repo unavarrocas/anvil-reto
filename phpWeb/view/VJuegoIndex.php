@@ -61,7 +61,7 @@ if (!isset($_SESSION["usuario"])) {
             </a>
             <?php endif; ?>
 
-            <?php if (!empty($data) && is_array($data)): ?>
+            <?php if (!empty($data)): ?>
                 <?php $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : []; ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
@@ -97,7 +97,7 @@ if (!isset($_SESSION["usuario"])) {
                     </article>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>No se han encontrado juegos en la base de datos.</p>
+                <p>No hay juegos a la venta.</p>
             <?php endif; ?>
 
         </section>
