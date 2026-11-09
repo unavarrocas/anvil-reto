@@ -24,7 +24,6 @@ class CJuego
     function show($id)
     {
         $data = $this->model->show($id);
-        /*require __DIR__ . "/../view/VEscudoShow.php";*/
     }
 
     function  create()
@@ -68,6 +67,5 @@ class CJuego
     {
         $this->model->destroy($id);
 
-        /*header("Location: index.php?entity=escudo");*/
     }
 }

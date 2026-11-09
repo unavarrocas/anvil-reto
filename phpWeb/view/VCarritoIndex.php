@@ -12,8 +12,8 @@ if (!isset($_SESSION["usuario"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Carrito.css">
+    <link rel="stylesheet" href="view/css/Style.css">
+    <link rel="stylesheet" href="view/css/Carrito.css">
     <link rel="icon" type="image/png" href="resources/logoAnvil.png">
 </head>
 
@@ -85,7 +85,7 @@ if (!isset($_SESSION["usuario"])) {
             <?php endif; ?>
 
             <form class="acciones-carrito" method="post">
-                <button formaction="index.php?entity=carrito&action=vaciar">Vaciar carrito</button>
+                <button formaction="index.php?entity=carrito&action=vaciar">Vaciar carrito</button> <!--Formaction es igual a un href-->
                 <button formaction="index.php?entity=carrito&action=comprar">Comprar ahora</button>
             </form>
 
@@ -99,7 +99,7 @@ if (!isset($_SESSION["usuario"])) {
     </footer>
 
     <!--Elace al script-->
-    <script src="js/Script.js"></script>
+    <script src="view/js/Script.js"></script>
 </body>
 
 </html>

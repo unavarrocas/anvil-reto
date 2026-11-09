@@ -12,18 +12,15 @@ class CPerfil
     function index()
     {
         $data = $this->model->index();
-        /* require __DIR__ . "/../view/VEscudoIndex.php"; */
     }
 
     function show($id)
     {
         $data = $this->model->show($id);
-        /* require __DIR__ . "/../view/VEscudoShow.php"; */
     }
 
     function  create()
     {
-        /* require __DIR__ . "/../view/VEscudoCreate.php"; */
     }
 
     function  store($id)
@@ -33,13 +30,11 @@ class CPerfil
 
         $this->model->store($id, $nickname, $saldo);
 
-        /* header("Location: index.php?entity=escudo"); */
     }
 
     function  edit($id)
     {
         $data = $this->model->show($id);
-        /* require __DIR__ . "/../view/VEscudoEdit.php"; */
     }
 
     function  update($id)
@@ -48,14 +43,10 @@ class CPerfil
         $saldo = $_POST["saldo"];
 
         $this->model->update($nickname, $saldo, $id);
-
-        /* header("Location: index.php"); */
     }
 
     function destroy($id)
     {
         $this->model->destroy($id);
-
-        /* header("Location: index.php?entity=escudo"); */
     }
 }

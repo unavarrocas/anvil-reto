@@ -38,7 +38,6 @@ class CCarrito
 
     function store($id)
     {
-        $id = (int) $id;
 
         /*Si ya lo tiene en su biblioteca, no se puede comprar otra vez*/
         $yaLoTiene = $this->modelBiblioteca->show($_SESSION["id_usuario"], $id);

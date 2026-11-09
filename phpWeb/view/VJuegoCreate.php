@@ -14,8 +14,8 @@ $pegiValidos = [3, 7, 12, 16, 18];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANVIL - Añadir juego</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/FormEditCreate.css">
+    <link rel="stylesheet" href="view/css/Style.css">
+    <link rel="stylesheet" href="view/css/FormEditCreate.css">
     <link rel="icon" type="image/png" href="resources/logoAnvil.png">
 </head>
  
@@ -43,7 +43,9 @@ $pegiValidos = [3, 7, 12, 16, 18];
  
             <div class="botones">
                 <button type="submit">Crear juego</button>
-                <a href="index.php?entity=juego&action=index">Cancelar</a>
+                <a href="index.php?entity=juego&action=index">
+                    <button type="button">Cancelar</button>
+                </a>
             </div>
         </form>
     </main>
