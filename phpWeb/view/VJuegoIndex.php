@@ -23,14 +23,14 @@
         </aside>
 
         <nav>
-            <a href="Tienda.html" class="actual">Tienda</a>
-            <a href="Biblioteca.html">Biblioteca</a>
-            <a href="Carrito.html">Carrito</a>
+            <a href="index.php?entity=juego&action=index" class="actual">Tienda</a>
+            <a href="index.php?entity=biblioteca&action=index">Biblioteca</a>
+            <a href="index.php?entity=carrito&action=index">Carrito</a>
         </nav>
 
         <aside>
             <!-- Carrito -->
-            <a href="Carrito.html" title="Carrito"></a>
+            <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p>Nickname</p>
@@ -46,9 +46,26 @@
 
         <section>
 
+            <?php if ($esAdmin): ?>
+            <a class="barra-anadir" href="index.php?entity=juego&action=create">
+                <span>+</span> Añadir juego a la tienda
+            </a>
+            <?php endif; ?>
+
             <?php if (!empty($data) && is_array($data)): ?>
+                <?php $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : []; ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
+
+                        <?php if ($esAdmin): ?>
+                            <div class="acciones-admin">
+                                <a href="index.php?entity=juego&action=edit&id=<?php echo ($juego['id_juego']); ?>"
+                                title="Editar juego">
+                                
+                                </a>
+                            </div>
+                        <?php endif; ?>
+
                         <!--No hay imagenes de juegos todavia, hay que indicar la ruta-->
                         <img src="resources/portadaPruebas.jpg" alt="<?php echo ($juego['nombre']); ?>">
                         <aside>
@@ -58,7 +75,15 @@
                                 <span><?php echo ($juego['precio']); ?> €</span>
                             </div>
                             <p><?php echo ($juego['descripcion']); ?></p>
-                            <button>Añadir al carrito</button>
+                            <?php if (in_array($juego['id_juego'], $propios)): ?>
+                                <button disabled>En tu biblioteca</button> <!--Esto es cuando el usuario ya tiene el juego-->
+                            <?php elseif (in_array($juego['id_juego'], $carrito)): ?>
+                                <button disabled>Añadido al carrito</button> <!--Esto es cuando el juego esta en el carrito, el boton se desactive-->
+                            <?php else: ?>
+                                <form method="post" action="index.php?entity=carrito&action=store&id=<?php echo ($juego['id_juego']); ?>">
+                                    <button>Añadir al carrito</button>
+                                </form>
+                            <?php endif; ?>
                         </aside>
                     </article>
                 <?php endforeach; ?>
@@ -105,7 +130,7 @@
 
     <!--Elaces a los scripts-->
     <script src="js/Script.js"></script>
-    <script src="js/Tienda.js"></script>
+    <!-- <script src="js/Tienda.js"></script> -->
 
 </body>
 

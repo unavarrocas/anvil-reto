@@ -9,7 +9,33 @@
     --gris-texto-secundario: #B8C4D9;
     --verde-saldo: #3FD07F;
     --sombra-blanca: rgba(255, 255, 255, 0.5);
+    --rojo-error: #ff6b6b;
     --fuente: sans-serif;
+
+}
+
+/* ===== MODO CLARO ===== */
+/* Mismas variables con colores claros. Se activan cuando el body tiene la clase "claro" */
+body.claro {
+    --azul-fondo: #EEF2F8;
+    --blanco-texto: #142340;
+    --azul-fondo-header-footer: #FFFFFF;
+    --azul-fondo-card: #FFFFFF;
+    --blanco-transparente: rgba(20, 35, 64, 0.12);
+    --gris-texto-secundario: #4A5A78;
+    --verde-saldo: #1E9E57;
+    --sombra-blanca: rgba(20, 35, 64, 0.25);
+    --rojo-error: #D63A3A;
+}
+
+/* El icono del carrito es blanco: en modo claro se invierten sus pixeles */
+body.claro header aside:nth-child(4) a {
+    filter: invert(1);
+}
+
+/* Al pasar el ratón vuelve al carrito naranja normal */
+body.claro header aside:nth-child(4) a:hover {
+    filter: none;
 }
 
 /* ===== TODA LA PAGINA ===== */
@@ -39,7 +65,7 @@ header {
     /* Pegado, dentro del flujo */
     position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 /*Hamburguesa: oculta en PC*/
@@ -113,6 +139,12 @@ header aside:nth-child(4) a {
 /*Al pasar el ratón cambia al carrito naranja*/
 header aside:nth-child(4) a:hover {
     background-image: url(../resources/carritoCompraNaranja.png);
+}
+
+/*Boton modo claro/oscuro*/
+#btnTema {
+    display: block;
+    font-size: 22px;
 }
 
 /*Nickname y saldo: uno encima del otro y centrados*/

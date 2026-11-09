@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 require_once __DIR__ . "/../db/DB.php";
 require_once __DIR__ . "/../model/MBiblioteca.php";
 require_once __DIR__ . "/../model/MJuego.php";
@@ -8,14 +9,21 @@ require_once __DIR__ . "/CBiblioteca.php";
 require_once __DIR__ . "/CJuego.php";
 require_once __DIR__ . "/CPerfil.php";
 require_once __DIR__ . "/CLogin.php";
+require_once __DIR__ . "/CCarrito.php";
 
-
-$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login";
+$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login"; /*Esta es la que hay que dejar, hay que quitar la de abajo */
+//$entity = isset($_GET["entity"]) ? $_GET["entity"] : "juego"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
+/* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
+if ($entity !== "login" && !isset($_SESSION["usuario"])) {
+    header("Location: index.php?entity=login&action=index");
+    exit();
+}
+
 switch ($entity) {
-    case "login";
+    case "login":
         switch ($action) {
             case "index":
                 $controller = new CLogin();
@@ -119,6 +127,39 @@ switch ($entity) {
 
             default:
                 header("Location: index.php?entity=biblioteca&action=index");
+        }
+
+        break;
+
+    case "carrito":
+        switch ($action) {
+            case "index":
+                $controller = new CCarrito();
+                $controller->index();
+                break;
+
+            case "store":
+                $controller = new CCarrito();
+                $controller->store($id);
+                break;
+
+            case "destroy":
+                $controller = new CCarrito();
+                $controller->destroy($id);
+                break;
+
+            case "vaciar":
+                $controller = new CCarrito();
+                $controller->vaciar();
+                break;
+
+            case "comprar":
+                $controller = new CCarrito();
+                $controller->comprar();
+                break;
+
+            default:
+                header("Location: index.php?entity=juego&action=index");
         }
 
         break;

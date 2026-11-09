@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANVIL - Login</title>
-    <link rel="stylesheet" href="../resources/style.css">
-    <link rel="stylesheet" href="../resources/styleIker.css">
-    <link rel="stylesheet" href="../resources/loginIker.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Login.css">
 </head>
 
 <body>

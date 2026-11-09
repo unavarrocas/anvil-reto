@@ -1,6 +1,9 @@
 /* ===== FILTRO POR PRECIO ===== */
 /* Contenedor */
 #filtro-precio {
+    /* Necesitamos relative porque el positon absoulte del mensaje de error no funciona sin el, absolute
+    necesita que el padre sea distinto a static */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,6 +47,27 @@
     text-align: center;
 }
 
+/* Mensajes de error */
+#mensajeErrorMin,
+#mensajeErrorMax {
+    position: absolute;
+    /* Coge de margin top toda la altura del padre */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    color: var(--rojo-error);
+    font-size: 12px;
+    text-align: center;
+}
+
+#mensajeErrorMin {
+    margin-top: 4px;
+}
+
+#mensajeErrorMax {
+    margin-top: 20px;
+}
+
 /* Botones */
 #filtro-precio button {
     width: auto;
@@ -56,6 +80,17 @@
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
+}
+
+/* Boton bloqueado */
+#filtro-precio button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Sin brillo al pasar el ratón */
+#filtro-precio button.disabled:hover {
+    box-shadow: none;
 }
 
 /* Filtrar */
@@ -79,13 +114,13 @@
 }
 
 /* ===== Videojuegos ===== */
-/* Cada seccion, separada por pegi */
+/* Contendor de cards */
 #cards section {
     display: grid;
     grid-template-columns: 300px 300px 300px 300px;
     justify-content: center;
     gap: 24px;
-    margin-top: 24px;
+    margin-top: 44px;
 }
 
 /* Cada card */
@@ -163,7 +198,7 @@
 }
 
 /* Descripcion */
-#cards p {
+#cards section p {
     color: var(--gris-texto-secundario);
     font-size: 14px;
     line-height: 1.5;
@@ -171,11 +206,13 @@
 }
 
 /* Boton: margin-top auto lo empuja abajo del todo */
-#cards button {
+#cards section button {
     background: var(--amarillo-detalles);
     color: var(--azul-fondo-header-footer);
     margin-top: auto;
-    border: none;
+    /* Borde invisible del mismo grosor que el del boton bloqueado,
+    para que no cambie de tamaño al pasar a "En el carrito" */
+    border: 1px solid transparent;
     font-family: inherit;
     width: 100%;
     font-weight: 700;
@@ -183,6 +220,14 @@
     border-radius: 6px;
     padding: 10px;
     cursor: pointer;
+}
+
+/* Boton bloqueado (juego ya en posesión) */
+#cards section button.disabled {
+    background: transparent;
+    color: var(--verde-saldo);
+    border: 1px solid var(--verde-saldo);
+    cursor: default
 }
 
 /* ===== SECCION TRAILER ===== */
@@ -305,12 +350,25 @@
     }
 }
 
-/* Query para ajustar los videojuegos de 1 en 1 y el precio*/
+/* Query para ajustar los videojuegos de 1 en 1, el precio
+y el mensaje de error*/
 @media (max-width: 650px) {
+
     /* Filtro precio */
     #filtro-precio {
         width: 300px;
         flex-direction: column;
+    }
+
+    /* Mensajes de error */
+    #mensajeErrorMin,
+    #mensajeErrorMax {
+        /* Entra en el flujo */
+        position: static;
+        margin-top: 0;
+        width: 100%;
+        height: 30px;
+        line-height: 15px;
     }
 
     /* Videojuegos */

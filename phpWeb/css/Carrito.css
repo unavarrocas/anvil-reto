@@ -1,0 +1,198 @@
+/* ===== CARRITO ===== */
+/* Contenedor */
+.seccion-carrito {
+    width: 60%;
+    margin: 48px auto;
+}
+
+/* Titulo "Resumen de tu carrito" */
+.seccion-carrito h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* "Cesta", titulo secundario */
+.seccion-carrito h2 {
+    color: var(--amarillo-detalles);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+/* Caja que contiene todos los juegos y los botones */
+.seccion-carrito>div {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 24px 24px 24px;
+    background-color: var(--azul-fondo-card);
+    border-radius: 6px;
+    min-height: 500px;
+}
+
+/* ===== CADA JUEGO ===== */
+/* Card con 3 columnas: portada | titulo y pegi | precio y papelera */
+.seccion-carrito article {
+    display: grid;
+    /* auto se adapta a lo que tiene dentro y fr son fracciones segun el espacio sobrante */
+    grid-template-columns: 90px 1fr auto;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--blanco-transparente);
+}
+
+/* Portada */
+.seccion-carrito article>img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Titulo */
+.seccion-carrito h3 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+/* PEGI */
+.seccion-carrito article p:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    justify-self: start;
+    background-color: var(--blanco-transparente);
+    color: var(--gris-texto-secundario);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+}
+
+/* Precio */
+.seccion-carrito article p:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+    justify-self: end;
+    color: var(--amarillo-detalles);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Papelera */
+.seccion-carrito article a {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: start;
+    justify-self: end;
+}
+
+.seccion-carrito article a img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* ===== BOTONES ===== */
+/* Contenedor */
+.acciones-carrito {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    padding-top: 24px;
+    margin-top: auto;
+}
+
+/* Estilo comun */
+.acciones-carrito button {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Vaciar carrito */
+.acciones-carrito button:nth-child(1) {
+    background-color: transparent;
+    color: var(--gris-texto-secundario);
+    border: 1px solid var(--gris-texto-secundario);
+}
+
+/* Comprar ahora */
+.acciones-carrito button:nth-child(2) {
+    background-color: var(--amarillo-detalles);
+    color: var(--azul-fondo-header-footer);
+    border: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Pantallas medianas: la seccion ocupa mas ancho */
+@media (max-width: 1100px) {
+
+    .seccion-carrito {
+        width: 85%;
+    }
+}
+
+/* TABLET */
+@media (max-width: 700px) {
+
+    /* ===== CARRITO ===== */
+    /* Contenedor */
+    .seccion-carrito {
+        width: 95%;
+        margin: 32px auto;
+    }
+
+    /* Titulo "Resumen de tu carrito" */
+    .seccion-carrito h1 {
+        font-size: 24px;
+    }
+
+    /* Caja que contiene todos los juegos y los botones */
+    .seccion-carrito>div {
+        padding: 4px 16px 16px 16px;
+    }
+
+    /* ===== CADA JUEGO ===== */
+    /* Card */
+    .seccion-carrito article {
+        grid-template-columns: 70px 1fr auto;
+        column-gap: 14px;
+    }
+
+    /* Imagen */
+    .seccion-carrito article>img {
+        width: 70px;
+        height: 94px;
+    }
+
+    /* Titulo */
+    .seccion-carrito h3 {
+        font-size: 16px;
+    }
+
+    /* Precio */
+    .seccion-carrito article p:nth-of-type(2) {
+        font-size: 18px;
+    }
+
+    /* ===== BOTONES ===== */
+    /* Uno encima del otro, "Comprar" arriba */
+    .acciones-carrito {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    /* Anchura de los dos */
+    .acciones-carrito button {
+        width: 100%;
+    }
+}
