@@ -33,8 +33,8 @@
             <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
             <!-- Perfil personalizado -->
             <article id="perfil">
-                <p>Nickname</p>
-                <p>777€</p>
+                <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
 

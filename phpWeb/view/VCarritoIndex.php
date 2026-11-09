@@ -1,3 +1,4 @@
+<?php /** @var array $data */ /** @var float|int $total */ ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,8 +34,8 @@
             <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
             <!-- Perfil personalizado -->
             <article id="perfil">
-                <p>Nickname</p>
-                <p>777€</p>
+                <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
 
@@ -50,7 +51,7 @@
         <!-- Carrito -->
         <div>
             <?php if (isset($_SESSION["mensaje"])): ?>
-                <p><?php echo ($_SESSION["mensaje"]); ?></p>
+                <p class="mensaje"><?php echo ($_SESSION["mensaje"]); ?></p>
                 <?php unset($_SESSION["mensaje"]); ?>
             <?php endif; ?>
 

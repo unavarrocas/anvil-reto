@@ -16,6 +16,16 @@ $entity = isset($_GET["entity"]) ? $_GET["entity"] : "login"; /*Esta es la que h
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
+/*Cada vez que se carga una pagina, guardamos el nickname y el saldo del usuario en la sesion*/
+if (isset($_SESSION["id_usuario"])) {
+    $modelPerfil = new MPerfil();
+    $perfilUsuario = $modelPerfil->show($_SESSION["id_usuario"]);
+
+    if ($perfilUsuario) {
+        $_SESSION["nickname"] = $perfilUsuario["nickname"];
+        $_SESSION["saldo"] = $perfilUsuario["saldo"];
+    }
+}
 /* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
 if ($entity !== "login" && !isset($_SESSION["usuario"])) {
     header("Location: index.php?entity=login&action=index");

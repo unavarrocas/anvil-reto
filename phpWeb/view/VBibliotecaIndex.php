@@ -33,8 +33,8 @@
             <a href="index.php?entity=carrito&action=index" title="Carrito"></a>
             <!-- Perfil personalizado -->
             <article id="perfil">
-                <p>Nickname</p>
-                <p>777€</p>
+                <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
 
@@ -56,6 +56,10 @@
                             <div>
                                 <h3><?php echo ($juego['nombre']); ?></h3>
                                 <span>PEGI <?php echo ($juego['pegi']); ?></span>
+                                <a href="index.php?entity=biblioteca&action=destroy&id=<?php echo ($juego['id_juego']); ?>"
+                                    onclick="return confirm('¿Seguro que quieres eliminar el juego? Es permanente.')">
+                                    <img src="resources/papelera.png" alt="Eliminar de la biblioteca">
+                                </a>
                             </div>
                             <p><?php echo ($juego['descripcion']); ?></p>
                         </aside>

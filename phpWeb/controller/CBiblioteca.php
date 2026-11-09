@@ -55,11 +55,12 @@ class CBiblioteca
         /* header("Location: index.php"); */
     }
 
-    function destroy($idUsuario)
+    function destroy($idJuego)
     {
-        $idJuego = $_POST["idJuego"];
-        $this->model->destroy($idUsuario, $idJuego);
+        /*Borramos la sesion del usuario, asi solo puede quitar juegos de su propia biblioteca*/
+        $this->model->destroy($_SESSION["id_usuario"], $idJuego);
 
-        /* header("Location: index.php?entity=escudo"); */
+        header("Location: index.php?entity=biblioteca&action=index");
+        exit();
     }
 }

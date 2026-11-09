@@ -1,12 +1,12 @@
-/* ===== TITULO ===== */
-/* Titulo de la pagina */
+/*===== TITULO =====*/
+/*Titulo de la pagina*/
 h1 {
     text-align: center;
     font-size: 32px;
     margin-top: 40px;
 }
 
-/* Etiqueta naranja encima (como en el trailer) */
+/*Etiqueta naranja encima (como en el trailer)*/
 h1::before {
     content: "TU COLECCIÓN";
     display: block;
@@ -16,7 +16,7 @@ h1::before {
     margin-bottom: 8px;
 }
 
-/* Rayita naranja debajo */
+/*Rayita naranja debajo*/
 h1::after {
     content: "";
     display: block;
@@ -26,8 +26,8 @@ h1::after {
     margin: 12px auto 0;
 }
 
-/* ===== Videojuegos ===== */
-/* Cada seccion, separada por pegi */
+/*===== Videojuegos =====*/
+/*Cada seccion, separada por pegi*/
 #cards section {
     display: grid;
     grid-template-columns: 300px 300px 300px 300px;
@@ -36,7 +36,7 @@ h1::after {
     margin-top: 24px;
 }
 
-/* Cada card */
+/*Cada card*/
 #cards section article {
     background-color: var(--azul-fondo-card);
     display: flex;
@@ -46,12 +46,12 @@ h1::after {
     transition: 0.2s;
 }
 
-/* Desplazamientos vertical/horizontal, difuminado del borde, color */
+/*Desplazamientos vertical/horizontal, difuminado del borde, color*/
 #cards section article:hover {
     box-shadow: 0 0 15px var(--sombra-blanca);
 }
 
-/* Imagen */
+/*Imagen*/
 #cards img {
     width: 100%;
     height: 170px;
@@ -59,9 +59,9 @@ h1::after {
     object-fit: cover;
 }
 
-/* Resto del card */
+/*Resto del card*/
 #cards aside {
-    /* Que coja todo el espacio que pueda */
+    /*Que coja todo el espacio que pueda*/
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -69,20 +69,20 @@ h1::after {
     padding: 16px;
 }
 
-/* Titulo y PEGI*/
+/*Titulo y PEGI*/
 #cards aside div {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/* Titulo */
+/*Titulo*/
 #cards h3 {
     flex-grow: 1;
     font-size: 17px;
 }
 
-/* PEGI */
+/*PEGI*/
 #cards span {
     border: 1px solid var(--gris-texto-secundario);
     font-size: 11px;
@@ -93,7 +93,7 @@ h1::after {
     padding: 6px 10px;
 }
 
-/* Descripcion */
+/*Descripcion*/
 #cards p {
     color: var(--gris-texto-secundario);
     font-size: 14px;
@@ -101,8 +101,8 @@ h1::after {
     min-height: 63px;
 }
 
-/* ===== RECUADRO "Ir a tienda" ===== */
-/* Contenedor */
+/*===== RECUADRO "Ir a tienda" =====*/
+/*Contenedor*/
 .ir-tienda {
     width: 95%;
     margin: 48px auto;
@@ -123,7 +123,7 @@ h1::after {
     margin-bottom: 20px;
 }
 
-/* El enlace con forma de boton */
+/*El enlace con forma de boton*/
 .ir-tienda a {
     display: inline-block;
     background-color: var(--amarillo-detalles);
@@ -134,8 +134,8 @@ h1::after {
     border-radius: 6px;
 }
 
-/* ===== MEDIA QUERIES ===== */
-/* Query para ajustar los videojuegos de 3 en 3 */
+/*===== MEDIA QUERIES =====*/
+/*Query para ajustar los videojuegos de 3 en 3*/
 @media (max-width: 1290px) {
 
     #cards section {
@@ -143,7 +143,7 @@ h1::after {
     }
 }
 
-/* Query para ajustar los videojuegos de 2 en 2 */
+/*Query para ajustar los videojuegos de 2 en 2*/
 @media (max-width: 960px) {
 
     #cards section {
@@ -151,10 +151,18 @@ h1::after {
     }
 }
 
-/* Query para ajustar los videojuegos de 1 en 1 */
+/*Query para ajustar los videojuegos de 1 en 1*/
 @media (max-width: 650px) {
 
     #cards section {
         grid-template-columns: 300px;
     }
+}
+
+/*Papelera para quitar un juego de la biblioteca*/
+#cards aside div a img {
+    width: 22px;
+    height: 22px;
+    border-radius: 0;
+    cursor: pointer;
 }
