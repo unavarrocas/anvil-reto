@@ -15,7 +15,7 @@ form {
     max-width: 480px;
     padding: 24px;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: var(--azul-fondo-card);
     box-sizing: border-box;
 }
  

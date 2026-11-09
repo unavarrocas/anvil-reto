@@ -77,7 +77,7 @@
             <?php endif; ?>
 
             <form class="acciones-carrito" method="post">
-                <button formaction="index.php?entity=carrito&action=vaciar">Vaciar carrito</button>
+                <button formaction="index.php?entity=carrito&action=vaciar">Vaciar carrito</button> <!--Formaction es igual a un href-->
                 <button formaction="index.php?entity=carrito&action=comprar">Comprar ahora</button>
             </form>
 
