@@ -1,4 +1,12 @@
-<?php /** @var array $data */ /** @var float|int $total */ ?>
+<?php 
+/* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
+if (!isset($_SESSION["usuario"])) {
+    header("Location: index.php?entity=login&action=index");
+    exit();
+}
+
+/** @var array $data */ /** @var float|int $total */
+?>
 <!DOCTYPE html>
 <html lang="es">
 

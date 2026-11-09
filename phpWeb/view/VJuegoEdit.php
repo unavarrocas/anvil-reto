@@ -1,11 +1,15 @@
 <?php
-// $data viene de CJuego::edit() y es la fila del juego (o null si el id no existe).
-$juego = $data;
- 
+/* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
+if (!isset($_SESSION["usuario"])) {
+    header("Location: index.php?entity=login&action=index");
+    exit();
+}
 if (!$juego) {
     header("Location: index.php?entity=juego&action=index");
     exit();
 }
+// $data viene de CJuego::edit() y es la fila del juego (o null si el id no existe).
+$juego = $data;
  
 $pegiValidos = [3, 7, 12, 16, 18];
 ?>

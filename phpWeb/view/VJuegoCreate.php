@@ -1,4 +1,10 @@
 <?php
+/* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
+if (!isset($_SESSION["usuario"])) {
+    header("Location: index.php?entity=login&action=index");
+    exit();
+}
+
 $pegiValidos = [3, 7, 12, 16, 18];
 ?>
 <!DOCTYPE html>

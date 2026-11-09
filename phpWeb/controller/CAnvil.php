@@ -11,8 +11,7 @@ require_once __DIR__ . "/CPerfil.php";
 require_once __DIR__ . "/CLogin.php";
 require_once __DIR__ . "/CCarrito.php";
 
-$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login"; /*Esta es la que hay que dejar, hay que quitar la de abajo */
-//$entity = isset($_GET["entity"]) ? $_GET["entity"] : "juego"; /*Esto hay que quitar cuando se termine, es para saltarse el login que no me funciona.*/
+$entity = isset($_GET["entity"]) ? $_GET["entity"] : "login";
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
@@ -25,11 +24,6 @@ if (isset($_SESSION["id_usuario"])) {
         $_SESSION["nickname"] = $perfilUsuario["nickname"];
         $_SESSION["saldo"] = $perfilUsuario["saldo"];
     }
-}
-/* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
-if ($entity !== "login" && !isset($_SESSION["usuario"])) {
-    header("Location: index.php?entity=login&action=index");
-    exit();
 }
 
 switch ($entity) {
