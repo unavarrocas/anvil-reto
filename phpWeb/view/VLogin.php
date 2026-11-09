@@ -14,7 +14,7 @@
     <!-- Formulario -->
     <main>
         <form method="post" action="?entity=login&action=login">
-            <img src="../resources/Imagenes/logoAnvil.png" alt="Logo de Anvil">
+            <img src="resources/logoAnvil.png" alt="Logo de Anvil">
             <h1>Inicia sesión</h1>
 
             <label for="usuario">Nombre de la cuenta</label>
