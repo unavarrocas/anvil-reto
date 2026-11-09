@@ -4,12 +4,13 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: index.php?entity=login&action=index");
     exit();
 }
+// $data viene de CJuego::edit() y es la fila del juego (o null si el id no existe).
+$juego = $data;
+
 if (!$juego) {
     header("Location: index.php?entity=juego&action=index");
     exit();
 }
-// $data viene de CJuego::edit() y es la fila del juego (o null si el id no existe).
-$juego = $data;
  
 $pegiValidos = [3, 7, 12, 16, 18];
 ?>
@@ -33,11 +34,11 @@ $pegiValidos = [3, 7, 12, 16, 18];
  
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" maxlength="100" required
-                value="<?php echo htmlspecialchars($juego['nombre']); ?>">
+                value="<?php echo $juego['nombre']; ?>">
  
             <label for="precio">Precio (€)</label>
-            <input type="number" id="precio" name="precio" min="0" step="0.01" required
-                value="<?php echo htmlspecialchars($juego['precio']); ?>">
+            <input type="number" id="precio" name="precio" required
+                value="<?php echo $juego['precio']; ?>">
  
             <label for="descripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" rows="5" required><?php echo htmlspecialchars($juego['descripcion']); ?></textarea>
@@ -45,7 +46,7 @@ $pegiValidos = [3, 7, 12, 16, 18];
             <label for="pegi">PEGI</label>
             <select id="pegi" name="pegi" required>
                 <?php foreach ($pegiValidos as $valor): ?>
-                    <option value="<?php echo $valor; ?>" <?php echo ((int) $juego['pegi'] === $valor) ? 'selected' : ''; ?>>
+                    <option value="<?php echo $valor; ?>" <?php echo ($juego['pegi'] === $valor) ? 'selected' : ''; ?>>
                         <?php echo $valor; ?>
                     </option>
                 <?php endforeach; ?>
