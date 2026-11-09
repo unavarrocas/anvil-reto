@@ -5,7 +5,6 @@ if (!isset($_SESSION["usuario"])) {
     exit();
 }
 
-/** @var array $data */ /** @var float|int $total */
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,8 +13,8 @@ if (!isset($_SESSION["usuario"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Carrito.css">
+    <link rel="stylesheet" href="view/css/Style.css">
+    <link rel="stylesheet" href="view/css/Carrito.css">
     <link rel="icon" type="image/png" href="resources/logoAnvil.png">
 </head>
 
@@ -101,7 +100,7 @@ if (!isset($_SESSION["usuario"])) {
     </footer>
 
     <!--Elace al script-->
-    <script src="js/Script.js"></script>
+    <script src="view/js/Script.js"></script>
 </body>
 
 </html>

@@ -20,8 +20,8 @@ $pegiValidos = [3, 7, 12, 16, 18];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANVIL - Editar juego</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/FormEditCreate.css">
+    <link rel="stylesheet" href="view/css/Style.css">
+    <link rel="stylesheet" href="view/css/FormEditCreate.css">
     <link rel="icon" type="image/png" href="resources/logoAnvil.png">
 </head>
  
