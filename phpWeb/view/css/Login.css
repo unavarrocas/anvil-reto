@@ -105,7 +105,7 @@ button:nth-child(10):hover {
 /* Imágen */
 aside {
     width: 50%;
-    background-image: url(../resources/fondoLogin.jpg);
+    background-image: url(../../resources/fondoLogin.jpg);
     /* Ajustar y centrar */
     background-size: cover;
     background-position: center;

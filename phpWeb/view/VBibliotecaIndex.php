@@ -13,8 +13,8 @@ if (!isset($_SESSION["usuario"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Biblioteca.css">
+    <link rel="stylesheet" href="view/css/Style.css">
+    <link rel="stylesheet" href="view/css/Biblioteca.css">
     <link rel="icon" type="image/png" href="resources/logoAnvil.png">
 </head>
 
@@ -97,7 +97,7 @@ if (!isset($_SESSION["usuario"])) {
     </footer>
 
     <!--Elace al script-->
-    <script src="js/Script.js"></script>
+    <script src="view/js/Script.js"></script>
 
 </body>
 
