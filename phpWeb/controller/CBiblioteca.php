@@ -15,7 +15,7 @@ class CBiblioteca
         require __DIR__ . "/../view/VBibliotecaIndex.php";
     }
 
-    function show($idUsuario)
+    /* function show($idUsuario)
     {
         $idJuego = $_POST["idJuego"];
         $data = $this->model->show($idUsuario, $idJuego);
@@ -43,11 +43,11 @@ class CBiblioteca
         $idJuegoNew = $_POST["idJuegoNew"];
 
         $this->model->update($idUsuarioNew, $idJuegoNew, $idUsuario, $idJuego);
-    }
+    } */
 
     function destroy($idJuego)
     {
-        /*Borramos la sesion del usuario, asi solo puede quitar juegos de su propia biblioteca*/
+        /*Borramos con el id de la sesion del usuario, asi solo puede quitar juegos de su propia biblioteca*/
         $this->model->destroy($_SESSION["id_usuario"], $idJuego);
 
         header("Location: index.php?entity=biblioteca&action=index");

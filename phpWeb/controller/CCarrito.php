@@ -53,6 +53,7 @@ class CCarrito
 
     function destroy($id)
     {
+        /* Parsea a entero el id */
         $id = (int) $id;
 
         /*Dejamos en el carrito todos los ids menos el que quitamos*/
@@ -79,7 +80,7 @@ class CCarrito
         $total = 0;
 
         foreach ($_SESSION["carrito"] as $idJuego) {
-            /*Si ya lo tiene en su biblioteca lo saltamos si no, la BD daria error por duplicado*/
+            /*Si ya lo tiene en su biblioteca lo saltamos en esta vuelta si no, la BD daria error por duplicado*/
             if ($this->modelBiblioteca->show($idUsuario, $idJuego)) {
                 continue;
             }
@@ -94,6 +95,8 @@ class CCarrito
 
         if (empty($juegos)) {
             $_SESSION["mensaje"] = "No hay juegos que comprar.";
+            /* Redondea a dos decimales, el saldo lo parsea a float (desde la db llega como texto)
+            y comprueba si el total es mayor que el saldo. */
         } elseif (round($total, 2) > round((float) $perfil["saldo"], 2)) {
             $_SESSION["mensaje"] = "No tienes saldo suficiente.";
         } else {

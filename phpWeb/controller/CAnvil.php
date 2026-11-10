@@ -7,7 +7,6 @@ require_once __DIR__ . "/../model/MPerfil.php";
 require_once __DIR__ . "/../model/MLogin.php";
 require_once __DIR__ . "/CBiblioteca.php";
 require_once __DIR__ . "/CJuego.php";
-require_once __DIR__ . "/CPerfil.php";
 require_once __DIR__ . "/CLogin.php";
 require_once __DIR__ . "/CCarrito.php";
 
@@ -15,7 +14,8 @@ $entity = isset($_GET["entity"]) ? $_GET["entity"] : "login";
 $action = isset($_GET["action"]) ? $_GET["action"] : "index";
 $id = isset($_GET["id"]) ? $_GET["id"] : null;
 
-/*Cada vez que se carga una pagina, guardamos el nickname y el saldo del usuario en la sesion*/
+/*Cada vez que se carga una pagina, guardamos el nickname y el saldo del usuario en la sesion
+para no dejar obsoleto el saldo*/
 if (isset($_SESSION["id_usuario"])) {
     $modelPerfil = new MPerfil();
     $perfilUsuario = $modelPerfil->show($_SESSION["id_usuario"]);
@@ -94,26 +94,6 @@ switch ($entity) {
                 $controller->index();
                 break;
 
-            case "show":
-                $controller = new CBiblioteca();
-                $controller->show($id);
-                break;
-
-            case "store":
-                $controller = new CBiblioteca();
-                $controller->store($id);
-                break;
-
-            case "edit":
-                $controller = new CBiblioteca();
-                $controller->edit($id);
-                break;
-
-            case "update":
-                $controller = new CBiblioteca();
-                $controller->update($id);
-                break;
-
             case "destroy":
                 $controller = new CBiblioteca();
                 $controller->destroy($id);
@@ -154,30 +134,6 @@ switch ($entity) {
 
             default:
                 header("Location: index.php?entity=juego&action=index");
-        }
-
-        break;
-
-    case "perfil":
-        switch ($action) {
-
-            case "show":
-                $controller = new CPerfil();
-                $controller->show($id);
-                break;
-
-            case "edit":
-                $controller = new CPerfil();
-                $controller->edit($id);
-                break;
-
-            case "update":
-                $controller = new CPerfil();
-                $controller->update($id);
-                break;
-
-            default:
-                header("Location: index.php?entity=perfil&action=index");
         }
 
         break;

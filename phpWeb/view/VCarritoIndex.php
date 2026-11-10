@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["id_usuario"])) {
     header("Location: index.php?entity=login&action=index");
     exit();
 }
@@ -26,7 +26,9 @@ if (!isset($_SESSION["usuario"])) {
 
         <aside>
             <img src="resources/logoAnvil.png" alt="Logo de Anvil">
-            <span>ANVIL <?php if ($_SESSION["rol"] == "admin"){echo "(ADMIN)";};?></span>
+            <span>ANVIL <?php if ($_SESSION["rol"] == "admin") {
+                            echo "(ADMIN)";
+                        }; ?></span>
         </aside>
 
         <nav>
@@ -43,6 +45,7 @@ if (!isset($_SESSION["usuario"])) {
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <!-- Formate los números con dos decimales, los separa con una coma y pone un punto cada 3 cifras  -->
                 <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
@@ -60,6 +63,7 @@ if (!isset($_SESSION["usuario"])) {
         <div>
             <?php if (isset($_SESSION["mensaje"])): ?>
                 <p class="mensaje"><?php echo ($_SESSION["mensaje"]); ?></p>
+                <!-- Despues de mostrarlo, borra el mensaje de la sesion -->
                 <?php unset($_SESSION["mensaje"]); ?>
             <?php endif; ?>
 
@@ -79,6 +83,7 @@ if (!isset($_SESSION["usuario"])) {
                     </article>
                 <?php endforeach; ?>
 
+                <!-- Formate los números con dos decimales, los separa con una coma y pone un punto cada 3 cifras  -->
                 <p>Total a pagar: <?php echo number_format($total, 2, ',', '.'); ?>€</p>
             <?php else: ?>
                 <p>Tu carrito está vacío.</p>
