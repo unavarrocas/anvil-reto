@@ -8,7 +8,7 @@ USE anvil;
 CREATE TABLE USUARIOS (
     id_usuario  INT AUTO_INCREMENT PRIMARY KEY,
     nombre      VARCHAR(50)  NOT NULL UNIQUE,
-    contrasenia VARCHAR(255) NOT NULL,          -- guardar el hash (bcrypt/argon2), nunca texto plano
+    contrasenia VARCHAR(255) NOT NULL,          -- guardar el hash
     rol         VARCHAR(20)  NOT NULL DEFAULT 'usuario'
 );
 

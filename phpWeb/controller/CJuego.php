@@ -16,7 +16,11 @@ class CJuego
         $data = $this->model->index();
         /*Ids de los juegos que el usuario ya tiene en su biblioteca*/
         $biblioteca = $this->modelBiblioteca->index($_SESSION["id_usuario"]);
+        /* Comprueba si biblioteca tiene algo, si lo tiene array column coge todos los ids
+        de los juegos que posee el usuario. Si no lo tiene, lo deja vacio */
         $propios = $biblioteca ? array_column($biblioteca, "id_juego") : [];
+        /* Le dice que si tiene rol en sesion lo devuelva para compararlo, si no lo tiene compara con null.
+        Si es admin devuelve true */
         $esAdmin = ($_SESSION["rol"] ?? null) == "admin";
         require __DIR__ . "/../view/VJuegoIndex.php";
     }

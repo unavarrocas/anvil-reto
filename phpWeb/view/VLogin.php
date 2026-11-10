@@ -24,8 +24,6 @@
             <input type="password" id="contrasenia" name="contrasenia" required>
 
             <button type="submit">Iniciar sesión</button>
-            <!-- Pequeño evento de js para cerrar pestaña -->
-            <button type="button" onclick="window.close()">Cerrar</button>
         </form>
     </main>
 

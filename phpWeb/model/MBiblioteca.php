@@ -64,20 +64,6 @@ class MBiblioteca
         $query->close();
     }
 
-    function update($idUsuarioNew, $idJuegoNew, $idUsuario, $idJuego)
-    {
-        $sql = "UPDATE `usuarios_juegos` SET `id_usuario` = ?, `id_juego` = ?
-        WHERE `usuarios_juegos`.`id_usuario` = ? AND `usuarios_juegos`.`id_juego` = ?";
-
-        $query = $this->db->prepare($sql);
-
-        $query->bind_param("iiii", $idUsuarioNew, $idJuegoNew, $idUsuario, $idJuego);
-
-        $query->execute();
-
-        $query->close();
-    }
-
     function destroy($idUsuario, $idJuego)
     {
         $query = $this->db->prepare("DELETE FROM usuarios_juegos WHERE `usuarios_juegos`.`id_usuario` = ? AND `usuarios_juegos`.`id_juego` = ?");

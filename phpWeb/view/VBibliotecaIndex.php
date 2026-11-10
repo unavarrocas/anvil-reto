@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["id_usuario"])) {
     header("Location: index.php?entity=login&action=index");
     exit();
 }
@@ -27,7 +27,9 @@ if (!isset($_SESSION["usuario"])) {
 
         <aside>
             <img src="resources/logoAnvil.png" alt="Logo de Anvil">
-            <span>ANVIL <?php if ($_SESSION["rol"] == "admin"){echo "(ADMIN)";};?></span>
+            <span>ANVIL <?php if ($_SESSION["rol"] == "admin") {
+                            echo "(ADMIN)";
+                        }; ?></span>
         </aside>
 
         <nav>
@@ -44,6 +46,7 @@ if (!isset($_SESSION["usuario"])) {
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <!-- Formate los números con dos decimales, los separa con una coma y pone un punto cada 3 cifras  -->
                 <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
@@ -58,6 +61,7 @@ if (!isset($_SESSION["usuario"])) {
 
         <section>
 
+            <!-- Si data no esta vacio y es un array -->
             <?php if (!empty($data) && is_array($data)): ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
@@ -66,6 +70,7 @@ if (!isset($_SESSION["usuario"])) {
                             <div>
                                 <h3><?php echo ($juego['nombre']); ?></h3>
                                 <span>PEGI <?php echo ($juego['pegi']); ?></span>
+                                <!-- Eliminar incluye mensaje de confimación creado con js -->
                                 <a href="index.php?entity=biblioteca&action=destroy&id=<?php echo ($juego['id_juego']); ?>"
                                     onclick="return confirm('¿Seguro que quieres eliminar el juego? Es permanente.')">
                                     <img src="resources/papelera.png" alt="Eliminar de la biblioteca">

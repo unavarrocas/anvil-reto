@@ -1,6 +1,6 @@
 <?php 
 /* Si no ha iniciado sesion, le manda para el login, previene el poder entrar sin logear cambiando la url */
-if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["id_usuario"])) {
     header("Location: index.php?entity=login&action=index");
     exit();
 }
@@ -43,6 +43,7 @@ if (!isset($_SESSION["usuario"])) {
             <!-- Perfil personalizado -->
             <article id="perfil">
                 <p><?php echo ($_SESSION["nickname"]); ?></p>
+                <!-- Formate los números con dos decimales, los separa con una coma y pone un punto cada 3 cifras  -->
                 <p><?php echo number_format($_SESSION["saldo"], 2, ',', '.'); ?>€</p>
             </article>
         </aside>
@@ -62,6 +63,7 @@ if (!isset($_SESSION["usuario"])) {
             <?php endif; ?>
 
             <?php if (!empty($data)): ?>
+                <!-- Si el carrito existe lo hace recoge. Si no existe, le introduce un array vacio -->
                 <?php $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : []; ?>
                 <?php foreach ($data as $juego): ?>
                     <article>
